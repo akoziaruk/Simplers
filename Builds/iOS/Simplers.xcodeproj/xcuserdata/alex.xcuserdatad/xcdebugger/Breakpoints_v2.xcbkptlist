@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3F1CAD15-AD86-4C67-829A-634DAD7F7605"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31A0772C-4FF6-4112-A05C-FF56FA9E5024"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../JUCE/modules/juce_audio_utils/gui/juce_MidiKeyboardComponent.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "712"
+            endingLineNumber = "712"
+            landmarkName = "MidiKeyboardComponent::updateNoteUnderMouse(pos, isDown, fingerNum)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F46BBA68-770E-4F25-BBAF-528D69EBFD8C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Source/SamplerAudioSource.hpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "SamplerAudioSource"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "F46BBA68-770E-4F25-BBAF-528D69EBFD8C - 98c63b47d2fcf4ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SamplerAudioSource::~SamplerAudioSource()"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/Simplers/Source/SamplerAudioSource.hpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "F46BBA68-770E-4F25-BBAF-528D69EBFD8C - 98c63b47d2fcf4ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SamplerAudioSource::~SamplerAudioSource()"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/Simplers/Source/SamplerAudioSource.hpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "F46BBA68-770E-4F25-BBAF-528D69EBFD8C - 98c63b47d2fcf4ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SamplerAudioSource::~SamplerAudioSource()"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/Simplers/Source/SamplerAudioSource.hpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
