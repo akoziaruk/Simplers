@@ -6,7 +6,7 @@
 	<dict>
 		<key>Info.plist</key>
 		<data>
-		8DHHoG6NJB002HTm7jHUF7/CZes=
+		na7IiXwnVu0gePGJcFb9MM5XmzY=
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -24,23 +24,55 @@
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
 		</data>
-		<key>bass_drum.wav</key>
+		<key>clap.wav</key>
 		<data>
-		TOTq0+oKAkO/rd7+zG+GQ4kZ/B0=
+		PajaR2106V+lwQ6AIY6LTur5dVs=
 		</data>
-		<key>hi_hat.wav</key>
+		<key>clave.wav</key>
 		<data>
-		HtR9QsEDPmsdhKmYlZDRMOwocr4=
+		bmnDO+iqGLgSSs3UfxsDxoT8e6g=
 		</data>
-		<key>snare.wav</key>
+		<key>crash.wav</key>
 		<data>
-		w/PG/ZFqoldb2YDABXVGiBA4TSQ=
+		/cqbS3EezXxTY3PN7csC16KEwXQ=
+		</data>
+		<key>embedded.mobileprovision</key>
+		<data>
+		MebG99fnD3on4MaWvUoupr5O66g=
+		</data>
+		<key>hat1.wav</key>
+		<data>
+		AIW1X1v7HB/SqgxexqtNkoUeD6M=
+		</data>
+		<key>hat2.wav</key>
+		<data>
+		PU9R99AqV+pYfSmUNogZMoCt6sc=
+		</data>
+		<key>hat3.wav</key>
+		<data>
+		9BQXWvb7lHSBU1DowsEsa54rcjs=
+		</data>
+		<key>kick1.wav</key>
+		<data>
+		3xU4K9t3/lJt1+IJ9y2s79y+U0k=
+		</data>
+		<key>kick2.wav</key>
+		<data>
+		ogHNRcbIsJOfUkN9gAJ+hL5TkNM=
+		</data>
+		<key>sn1.wav</key>
+		<data>
+		+U3lNZTkLdipZakiehCkqTSa1mc=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			qawDhI6TsCIkoq3KtyzZsu3rfFw=
+			</data>
 			<key>hash2</key>
 			<data>
 			iND/D8VUpZPEyfP8IchZpst00/t0paZFuhgEzCgCZ4o=
@@ -48,6 +80,10 @@
 		</dict>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			n2t8gsDpfE6XkhG31p7IQJRxTxU=
+			</data>
 			<key>hash2</key>
 			<data>
 			HyVdXMU7Ux4/KalAao30mpWOK/lEPT4gvYN09wf31cg=
@@ -55,30 +91,123 @@
 		</dict>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			U0x8EM0781fCPb62BbZIXKeDlZ4=
+			</data>
 			<key>hash2</key>
 			<data>
 			cWq7q+iQcmpSoaFGecnyPdKFEPFwRD3slgUmxFADkVs=
 			</data>
 		</dict>
-		<key>bass_drum.wav</key>
+		<key>clap.wav</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			PajaR2106V+lwQ6AIY6LTur5dVs=
+			</data>
 			<key>hash2</key>
 			<data>
-			QZNVj4OBAPgP+YU+IJEJQhBOwE2EwAFABDhgH4VDoiM=
+			WjqDgZQ+cTcJ1kcujqHn7leS6lEi0+ECLINLaJZbFvw=
 			</data>
 		</dict>
-		<key>hi_hat.wav</key>
+		<key>clave.wav</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			bmnDO+iqGLgSSs3UfxsDxoT8e6g=
+			</data>
 			<key>hash2</key>
 			<data>
-			kSLtf20LE4hdo0td1fQs5vuHFbGeSwiFMCoVbJpmNuE=
+			3CD12rsimTQyahDQMCt/GIr0xfu7pVSgaNgShomh8og=
 			</data>
 		</dict>
-		<key>snare.wav</key>
+		<key>crash.wav</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			/cqbS3EezXxTY3PN7csC16KEwXQ=
+			</data>
 			<key>hash2</key>
 			<data>
-			+j1COAmKIZdKgYaD4koPaNjKFcXeSvhe9eowOL5e2aU=
+			nfF5DEczqBTPNOJLNrPWPvR1QjaQL1peDg1fXxQzr/g=
+			</data>
+		</dict>
+		<key>embedded.mobileprovision</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MebG99fnD3on4MaWvUoupr5O66g=
+			</data>
+			<key>hash2</key>
+			<data>
+			kl5TGD7CKAiFu1XEFIhaPGtNfeOFnwdRiBawOAUt6W4=
+			</data>
+		</dict>
+		<key>hat1.wav</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			AIW1X1v7HB/SqgxexqtNkoUeD6M=
+			</data>
+			<key>hash2</key>
+			<data>
+			1VbrrXzmKz+i8I5R8HLfSvU2Ws+EGcbvu1tic+aMqV0=
+			</data>
+		</dict>
+		<key>hat2.wav</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			PU9R99AqV+pYfSmUNogZMoCt6sc=
+			</data>
+			<key>hash2</key>
+			<data>
+			4DiNOPB/qWID4eTYjkvNDUpmNbXCFVOG7RmQeoazr4c=
+			</data>
+		</dict>
+		<key>hat3.wav</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9BQXWvb7lHSBU1DowsEsa54rcjs=
+			</data>
+			<key>hash2</key>
+			<data>
+			/40BNIiXXc8OoPFE7fm/GYcO/1UQFi1Zvprgid7Lk94=
+			</data>
+		</dict>
+		<key>kick1.wav</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			3xU4K9t3/lJt1+IJ9y2s79y+U0k=
+			</data>
+			<key>hash2</key>
+			<data>
+			iqHBwRIyTgmONRTdOQFHEArFXT+811K1K0PcFQxSwaQ=
+			</data>
+		</dict>
+		<key>kick2.wav</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ogHNRcbIsJOfUkN9gAJ+hL5TkNM=
+			</data>
+			<key>hash2</key>
+			<data>
+			LZ1gy7n+uzaXZeO4J1dbSzW+ahD2uXwAOqKc+00XjKE=
+			</data>
+		</dict>
+		<key>sn1.wav</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+U3lNZTkLdipZakiehCkqTSa1mc=
+			</data>
+			<key>hash2</key>
+			<data>
+			xN29S2KqYqIxVN5dTSxtpWSf7aUWpspdzCFeYuSNP7Q=
 			</data>
 		</dict>
 	</dict>

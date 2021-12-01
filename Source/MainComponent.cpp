@@ -31,5 +31,5 @@ void MainComponent::paint (juce::Graphics& g)
 
 void MainComponent::resized()
 {
-    padComponent        .setBounds (8, 24, getWidth() - 16, getHeight() - 32);
+    padComponent        .setBounds (8, 50, getWidth() - 16, getHeight() - 88);
 }

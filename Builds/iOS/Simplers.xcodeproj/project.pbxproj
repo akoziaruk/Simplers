@@ -35,12 +35,18 @@
 		E91FC133263D57E8F4AC8671 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A425D50455EB83F58634627 /* CoreAudioKit.framework */; };
 		EC01D0ABB93F829052FED59D /* MainComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED7B3F96702717DFE3429796 /* MainComponent.cpp */; };
 		F9871339738A579AC80CB4BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49074B764CB526CF4491D30 /* LaunchScreen.storyboard */; };
-		FA4D0249275105EF002544AA /* SamplerAudioSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA4D0247275105EF002544AA /* SamplerAudioSource.cpp */; };
-		FA4D025027510E86002544AA /* bass_drum.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA4D024D27510E86002544AA /* bass_drum.wav */; };
-		FA4D025127510E86002544AA /* hi_hat.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA4D024E27510E86002544AA /* hi_hat.wav */; };
-		FA4D025227510E86002544AA /* snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA4D024F27510E86002544AA /* snare.wav */; };
-		FA4D0255275204B6002544AA /* MidiPadBoardComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA4D0253275204B6002544AA /* MidiPadBoardComponent.cpp */; };
-		FAF56EB627579ABE0014638A /* PadButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAF56EB427579ABE0014638A /* PadButton.cpp */; };
+		FAF56ED42757CAAE0014638A /* sn1.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAF56ECB2757CAAE0014638A /* sn1.wav */; };
+		FAF56ED52757CAAE0014638A /* kick2.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAF56ECC2757CAAE0014638A /* kick2.wav */; };
+		FAF56ED62757CAAE0014638A /* kick1.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAF56ECD2757CAAE0014638A /* kick1.wav */; };
+		FAF56ED72757CAAE0014638A /* clap.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAF56ECE2757CAAE0014638A /* clap.wav */; };
+		FAF56ED82757CAAE0014638A /* hat3.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAF56ECF2757CAAE0014638A /* hat3.wav */; };
+		FAF56ED92757CAAE0014638A /* hat2.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAF56ED02757CAAE0014638A /* hat2.wav */; };
+		FAF56EDA2757CAAE0014638A /* hat1.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAF56ED12757CAAE0014638A /* hat1.wav */; };
+		FAF56EDB2757CAAE0014638A /* clave.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAF56ED22757CAAE0014638A /* clave.wav */; };
+		FAF56EDC2757CAAE0014638A /* crash.wav in Resources */ = {isa = PBXBuildFile; fileRef = FAF56ED32757CAAE0014638A /* crash.wav */; };
+		FAF56EE32757CABB0014638A /* PadButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAF56EDF2757CABB0014638A /* PadButton.cpp */; };
+		FAF56EE42757CABB0014638A /* SamplerAudioSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAF56EE02757CABB0014638A /* SamplerAudioSource.cpp */; };
+		FAF56EE52757CABB0014638A /* MidiPadBoardComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAF56EE22757CABB0014638A /* MidiPadBoardComponent.cpp */; };
 		FC8A108D500176E2E48603EA /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38AA22E7E890315010BFF4DD /* Main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -89,15 +95,21 @@
 		E649A3E057253F12D8C23A98 /* juce_events */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_events; path = /Users/alex/Work/Audio/JUCE/modules/juce_events; sourceTree = "<absolute>"; };
 		ED7B3F96702717DFE3429796 /* MainComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MainComponent.cpp; path = ../../Source/MainComponent.cpp; sourceTree = SOURCE_ROOT; };
 		F775A0993A1EEC3BDBFFA655 /* include_juce_data_structures.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_data_structures.mm; path = ../../JuceLibraryCode/include_juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
-		FA4D0247275105EF002544AA /* SamplerAudioSource.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SamplerAudioSource.cpp; path = ../../Source/SamplerAudioSource.cpp; sourceTree = "<group>"; };
-		FA4D0248275105EF002544AA /* SamplerAudioSource.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = SamplerAudioSource.hpp; path = ../../Source/SamplerAudioSource.hpp; sourceTree = "<group>"; };
-		FA4D024D27510E86002544AA /* bass_drum.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bass_drum.wav; sourceTree = "<group>"; };
-		FA4D024E27510E86002544AA /* hi_hat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hi_hat.wav; sourceTree = "<group>"; };
-		FA4D024F27510E86002544AA /* snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snare.wav; sourceTree = "<group>"; };
-		FA4D0253275204B6002544AA /* MidiPadBoardComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MidiPadBoardComponent.cpp; path = ../../Source/MidiPadBoardComponent.cpp; sourceTree = "<group>"; };
-		FA4D0254275204B6002544AA /* MidiPadBoardComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = MidiPadBoardComponent.hpp; path = ../../Source/MidiPadBoardComponent.hpp; sourceTree = "<group>"; };
-		FAF56EB427579ABE0014638A /* PadButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PadButton.cpp; path = ../../Source/PadButton.cpp; sourceTree = "<group>"; };
-		FAF56EB527579ABE0014638A /* PadButton.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = PadButton.hpp; path = ../../Source/PadButton.hpp; sourceTree = "<group>"; };
+		FAF56ECB2757CAAE0014638A /* sn1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sn1.wav; sourceTree = "<group>"; };
+		FAF56ECC2757CAAE0014638A /* kick2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kick2.wav; sourceTree = "<group>"; };
+		FAF56ECD2757CAAE0014638A /* kick1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kick1.wav; sourceTree = "<group>"; };
+		FAF56ECE2757CAAE0014638A /* clap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clap.wav; sourceTree = "<group>"; };
+		FAF56ECF2757CAAE0014638A /* hat3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hat3.wav; sourceTree = "<group>"; };
+		FAF56ED02757CAAE0014638A /* hat2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hat2.wav; sourceTree = "<group>"; };
+		FAF56ED12757CAAE0014638A /* hat1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hat1.wav; sourceTree = "<group>"; };
+		FAF56ED22757CAAE0014638A /* clave.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clave.wav; sourceTree = "<group>"; };
+		FAF56ED32757CAAE0014638A /* crash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crash.wav; sourceTree = "<group>"; };
+		FAF56EDD2757CABB0014638A /* MidiPadBoardComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MidiPadBoardComponent.hpp; path = ../../Source/MidiPadBoardComponent.hpp; sourceTree = "<group>"; };
+		FAF56EDE2757CABB0014638A /* PadButton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PadButton.hpp; path = ../../Source/PadButton.hpp; sourceTree = "<group>"; };
+		FAF56EDF2757CABB0014638A /* PadButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PadButton.cpp; path = ../../Source/PadButton.cpp; sourceTree = "<group>"; };
+		FAF56EE02757CABB0014638A /* SamplerAudioSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SamplerAudioSource.cpp; path = ../../Source/SamplerAudioSource.cpp; sourceTree = "<group>"; };
+		FAF56EE12757CABB0014638A /* SamplerAudioSource.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SamplerAudioSource.hpp; path = ../../Source/SamplerAudioSource.hpp; sourceTree = "<group>"; };
+		FAF56EE22757CABB0014638A /* MidiPadBoardComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MidiPadBoardComponent.cpp; path = ../../Source/MidiPadBoardComponent.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,9 +143,12 @@
 				38AA22E7E890315010BFF4DD /* Main.cpp */,
 				46C307DE4BE32A54748D7F46 /* MainComponent.h */,
 				ED7B3F96702717DFE3429796 /* MainComponent.cpp */,
-				FA4D0248275105EF002544AA /* SamplerAudioSource.hpp */,
-				FA4D0247275105EF002544AA /* SamplerAudioSource.cpp */,
-				FAF56EB727579ACB0014638A /* MidiPad */,
+				FAF56EE22757CABB0014638A /* MidiPadBoardComponent.cpp */,
+				FAF56EDD2757CABB0014638A /* MidiPadBoardComponent.hpp */,
+				FAF56EDF2757CABB0014638A /* PadButton.cpp */,
+				FAF56EDE2757CABB0014638A /* PadButton.hpp */,
+				FAF56EE02757CABB0014638A /* SamplerAudioSource.cpp */,
+				FAF56EE12757CABB0014638A /* SamplerAudioSource.hpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -182,7 +197,7 @@
 		71FB68C08213D94B30956777 /* Simplers */ = {
 			isa = PBXGroup;
 			children = (
-				FA4D024A27510949002544AA /* Assets */,
+				FAF56ECA2757CAAE0014638A /* Assets */,
 				089F685288F00B32AF82B93A /* Source */,
 			);
 			name = Simplers;
@@ -236,26 +251,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA4D024A27510949002544AA /* Assets */ = {
+		FAF56ECA2757CAAE0014638A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				FA4D024D27510E86002544AA /* bass_drum.wav */,
-				FA4D024E27510E86002544AA /* hi_hat.wav */,
-				FA4D024F27510E86002544AA /* snare.wav */,
+				FAF56ECB2757CAAE0014638A /* sn1.wav */,
+				FAF56ECC2757CAAE0014638A /* kick2.wav */,
+				FAF56ECD2757CAAE0014638A /* kick1.wav */,
+				FAF56ECE2757CAAE0014638A /* clap.wav */,
+				FAF56ECF2757CAAE0014638A /* hat3.wav */,
+				FAF56ED02757CAAE0014638A /* hat2.wav */,
+				FAF56ED12757CAAE0014638A /* hat1.wav */,
+				FAF56ED22757CAAE0014638A /* clave.wav */,
+				FAF56ED32757CAAE0014638A /* crash.wav */,
 			);
 			name = Assets;
 			path = ../../Assets;
-			sourceTree = "<group>";
-		};
-		FAF56EB727579ACB0014638A /* MidiPad */ = {
-			isa = PBXGroup;
-			children = (
-				FA4D0254275204B6002544AA /* MidiPadBoardComponent.hpp */,
-				FA4D0253275204B6002544AA /* MidiPadBoardComponent.cpp */,
-				FAF56EB527579ABE0014638A /* PadButton.hpp */,
-				FAF56EB427579ABE0014638A /* PadButton.cpp */,
-			);
-			name = MidiPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +298,8 @@
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					967464C227BE3491812D25E6 = {
+						DevelopmentTeam = 8V2FDR3JP9;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -333,10 +345,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA4D025027510E86002544AA /* bass_drum.wav in Resources */,
-				FA4D025127510E86002544AA /* hi_hat.wav in Resources */,
+				FAF56ED82757CAAE0014638A /* hat3.wav in Resources */,
+				FAF56EDC2757CAAE0014638A /* crash.wav in Resources */,
+				FAF56ED72757CAAE0014638A /* clap.wav in Resources */,
+				FAF56ED42757CAAE0014638A /* sn1.wav in Resources */,
+				FAF56ED92757CAAE0014638A /* hat2.wav in Resources */,
+				FAF56EDB2757CAAE0014638A /* clave.wav in Resources */,
+				FAF56ED52757CAAE0014638A /* kick2.wav in Resources */,
 				BF8016E386FCB6E676E1D759 /* Images.xcassets in Resources */,
-				FA4D025227510E86002544AA /* snare.wav in Resources */,
+				FAF56EDA2757CAAE0014638A /* hat1.wav in Resources */,
+				FAF56ED62757CAAE0014638A /* kick1.wav in Resources */,
 				F9871339738A579AC80CB4BC /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,21 +367,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC8A108D500176E2E48603EA /* Main.cpp in Sources */,
+				FAF56EE32757CABB0014638A /* PadButton.cpp in Sources */,
 				EC01D0ABB93F829052FED59D /* MainComponent.cpp in Sources */,
+				FAF56EE42757CABB0014638A /* SamplerAudioSource.cpp in Sources */,
 				CA1E49A348211ED8EFD0D9AD /* include_juce_audio_basics.mm in Sources */,
 				74460908FAEF7448D425CABD /* include_juce_audio_devices.mm in Sources */,
 				68BF3F7A30038AE9DEEFBEAB /* include_juce_audio_formats.mm in Sources */,
 				5BEED7DD920EC28739F11F05 /* include_juce_audio_processors.mm in Sources */,
 				5B83A7DF5A4D03A5C277FBFB /* include_juce_audio_utils.mm in Sources */,
 				7B26FCB56BC92A1A3B95440C /* include_juce_core.mm in Sources */,
-				FA4D0249275105EF002544AA /* SamplerAudioSource.cpp in Sources */,
 				3784C5FA4F3F26B1268376AF /* include_juce_data_structures.mm in Sources */,
-				FA4D0255275204B6002544AA /* MidiPadBoardComponent.cpp in Sources */,
 				114B6A4E97DA51917635F82B /* include_juce_events.mm in Sources */,
 				C4348EE62E1F19DE6B6D5C32 /* include_juce_graphics.mm in Sources */,
+				FAF56EE52757CABB0014638A /* MidiPadBoardComponent.cpp in Sources */,
 				C79DC06DA2D56462BFF495C2 /* include_juce_gui_basics.mm in Sources */,
 				3D76C75949269B73F8251492 /* include_juce_gui_extra.mm in Sources */,
-				FAF56EB627579ABE0014638A /* PadButton.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,10 +395,11 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 8V2FDR3JP9;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -429,6 +448,7 @@
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/alex/Work/Audio/JUCE/modules";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Simplers;
 				PRODUCT_NAME = Simplers;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -455,7 +475,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = NO;
@@ -491,10 +511,11 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 8V2FDR3JP9;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -542,6 +563,7 @@
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/alex/Work/Audio/JUCE/modules";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Simplers;
 				PRODUCT_NAME = Simplers;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -568,7 +590,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = NO;

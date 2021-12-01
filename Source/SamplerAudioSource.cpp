@@ -9,17 +9,15 @@
 
 SamplerAudioSource::SamplerAudioSource (MidiKeyboardState& keyState)  : keyboardState (keyState)
 {
-    addSound("bass_drum.wav", 0);
-    addSound("bass_drum.wav", 1);
-    addSound("bass_drum.wav", 2);
-
-    addSound("snare.wav", 3);
-    addSound("snare.wav", 4);
-    addSound("snare.wav", 5);
-    
-    addSound("hi_hat.wav", 6);
-    addSound("hi_hat.wav", 7);
-    addSound("hi_hat.wav", 8);
+    addSound("kick1.wav", 0);
+    addSound("kick2.wav", 1);
+    addSound("sn1.wav", 2);
+    addSound("clap.wav", 3);
+    addSound("clave.wav", 4);
+    addSound("crash.wav", 5);
+    addSound("hat1.wav", 6);
+    addSound("hat2.wav", 7);
+    addSound("hat3.wav", 8);
 }
 
 void SamplerAudioSource::addSound(String name, int note)
@@ -41,7 +39,7 @@ void SamplerAudioSource::addSound(String name, int note)
     
     // setup synth
     synth.addVoice (new SamplerVoice());
-    synth.addSound (new SamplerSound (name, *audioReader, allNotes, note, 0.1, 0.1, 10.0));
+    synth.addSound (new SamplerSound (name, *audioReader, allNotes, note, 0, 0.5, 10.0));
 }
     
 void SamplerAudioSource::prepareToPlay (int samplesPerBlockExpected, double sampleRate)

@@ -8,6 +8,8 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.yourcompany.Simplers</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>NSMicrophoneUsageDescription</string>
 	<key>CFBundleName</key>
 	<string>Simplers</string>
 	<key>CFBundlePackageType</key>
@@ -24,6 +26,8 @@
 	<true/>
 	<key>NSHumanReadableCopyright</key>
 	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>6.0</string>
 	<key>UIBackgroundModes</key>
 	<array/>
 	<key>UILaunchStoryboardName</key>
@@ -33,6 +37,8 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
