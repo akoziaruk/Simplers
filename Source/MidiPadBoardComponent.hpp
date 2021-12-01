@@ -6,6 +6,8 @@
 //
 
 #include <JuceHeader.h>
+#include "PadButton.hpp"
+
 using namespace juce;
 
 class MidiPadBoardComponent  : public Component,
@@ -26,7 +28,7 @@ private:
     
     //==============================================================================
     MidiKeyboardState& state;
-    Array<TextButton*> pads;
+    Array<PadButton*> pads;
     
     int midiChannel = 1;
     int velocity = 1;

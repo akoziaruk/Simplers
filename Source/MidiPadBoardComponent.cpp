@@ -12,11 +12,9 @@ MidiPadBoardComponent::MidiPadBoardComponent(MidiKeyboardState& s): state(s)
     // add pads
     for (int i = 0; i < 3*3; i++)
     {
-        TextButton* pad = new TextButton();
+        PadButton* pad = new PadButton();
         pad->setComponentID(String(i));
         pad->addListener(this);
-//        pad->setColour(TextButton::ColourIds::buttonOnColourId, Colour (73, 109, 219));
-//        pad->setColour(TextButton::ColourIds::buttonColourId, Colour (113, 126, 195));
         pads.add(pad);
         addAndMakeVisible (pad);
     }
@@ -34,12 +32,11 @@ void MidiPadBoardComponent::buttonStateChanged(Button* button)
     // handle buttons action
     String id = button->getComponentID();
     int index = id.getIntValue();
-    TextButton::ButtonState buttonState = button->getState();
+    PadButton::ButtonState buttonState = button->getState();
 
-    if (buttonState == TextButton::ButtonState::buttonDown) {
+    if (buttonState == PadButton::ButtonState::buttonDown)
         state.noteOn (midiChannel, index, velocity);
-    }
-    else if (buttonState == TextButton::ButtonState::buttonNormal)
+    else if (buttonState == PadButton::ButtonState::buttonNormal)
         state.noteOff (midiChannel, index, velocity);
 }
 
@@ -61,5 +58,12 @@ void MidiPadBoardComponent::resized()
 
 void MidiPadBoardComponent::paint (juce::Graphics& g)
 {
-    g.fillAll (Colour (201, 93, 99));
+    auto cornerSize = 6.0f;
+    auto bounds = getLocalBounds().toFloat().reduced (0.5f, 0.5f);
+    
+    g.setColour (Colour (201, 93, 99));
+    g.fillRoundedRectangle (bounds, cornerSize);
+    
+    g.setColour (findColour (ComboBox::outlineColourId));
+    g.drawRoundedRectangle (bounds, cornerSize, 0.5f);
 }
