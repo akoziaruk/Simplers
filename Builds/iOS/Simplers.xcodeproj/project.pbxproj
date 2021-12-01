@@ -39,6 +39,7 @@
 		FA4D025027510E86002544AA /* bass_drum.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA4D024D27510E86002544AA /* bass_drum.wav */; };
 		FA4D025127510E86002544AA /* hi_hat.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA4D024E27510E86002544AA /* hi_hat.wav */; };
 		FA4D025227510E86002544AA /* snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA4D024F27510E86002544AA /* snare.wav */; };
+		FA4D0255275204B6002544AA /* MidiPadBoardComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA4D0253275204B6002544AA /* MidiPadBoardComponent.cpp */; };
 		FC8A108D500176E2E48603EA /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38AA22E7E890315010BFF4DD /* Main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,8 @@
 		FA4D024D27510E86002544AA /* bass_drum.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bass_drum.wav; sourceTree = "<group>"; };
 		FA4D024E27510E86002544AA /* hi_hat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hi_hat.wav; sourceTree = "<group>"; };
 		FA4D024F27510E86002544AA /* snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snare.wav; sourceTree = "<group>"; };
+		FA4D0253275204B6002544AA /* MidiPadBoardComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MidiPadBoardComponent.cpp; path = ../../Source/MidiPadBoardComponent.cpp; sourceTree = "<group>"; };
+		FA4D0254275204B6002544AA /* MidiPadBoardComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = MidiPadBoardComponent.hpp; path = ../../Source/MidiPadBoardComponent.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				ED7B3F96702717DFE3429796 /* MainComponent.cpp */,
 				FA4D0248275105EF002544AA /* SamplerAudioSource.hpp */,
 				FA4D0247275105EF002544AA /* SamplerAudioSource.cpp */,
+				FA4D0254275204B6002544AA /* MidiPadBoardComponent.hpp */,
+				FA4D0253275204B6002544AA /* MidiPadBoardComponent.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				7B26FCB56BC92A1A3B95440C /* include_juce_core.mm in Sources */,
 				FA4D0249275105EF002544AA /* SamplerAudioSource.cpp in Sources */,
 				3784C5FA4F3F26B1268376AF /* include_juce_data_structures.mm in Sources */,
+				FA4D0255275204B6002544AA /* MidiPadBoardComponent.cpp in Sources */,
 				114B6A4E97DA51917635F82B /* include_juce_events.mm in Sources */,
 				C4348EE62E1F19DE6B6D5C32 /* include_juce_graphics.mm in Sources */,
 				C79DC06DA2D56462BFF495C2 /* include_juce_gui_basics.mm in Sources */,

@@ -7,14 +7,13 @@ MainComponent::MainComponent()
     // you add any child components.
     setSize (800, 600);
     
-    addAndMakeVisible (keyboardComponent);
-
+    addAndMakeVisible (padComponent);
+    
     audioDeviceManager.initialise (2, 2, nullptr, true, {}, nullptr);
 
     audioSourcePlayer.setSource (&samplerAudioSource);
     audioDeviceManager.addAudioCallback (&audioSourcePlayer);
     audioDeviceManager.addMidiInputDeviceCallback ({}, &(samplerAudioSource.midiCollector));
-    
 }
 
 MainComponent::~MainComponent()
@@ -27,10 +26,10 @@ MainComponent::~MainComponent()
 //==============================================================================
 void MainComponent::paint (juce::Graphics& g)
 {
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
+    g.fillAll (Colour (238, 132, 52));
 }
 
 void MainComponent::resized()
 {
-    keyboardComponent   .setBounds (8, 96, getWidth() - 16, 64);
+    padComponent        .setBounds (8, 24, getWidth() - 16, getHeight() - 32);
 }

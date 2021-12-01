@@ -2,6 +2,7 @@
 
 #include <JuceHeader.h>
 #include "SamplerAudioSource.hpp"
+#include "MidiPadBoardComponent.hpp"
 
 using namespace juce;
 
@@ -26,9 +27,9 @@ private:
     AudioDeviceManager audioDeviceManager;
     AudioSourcePlayer audioSourcePlayer;
     SamplerAudioSource samplerAudioSource        { keyboardState };
+    
     MidiKeyboardState keyboardState;
-    MidiKeyboardComponent keyboardComponent  { keyboardState, MidiKeyboardComponent::horizontalKeyboard};
-
+    MidiPadBoardComponent padComponent { keyboardState };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
