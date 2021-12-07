@@ -22,11 +22,9 @@ SamplerAudioSource::SamplerAudioSource (MidiKeyboardState& keyState)  : keyboard
 
 void SamplerAudioSource::addSound(String name, int note)
 {
-    // create input stream
-    auto assetsDir = File::getSpecialLocation (File::currentExecutableFile)
-        .getParentDirectory();
-    
-    auto resourceFile = assetsDir.getChildFile (name);
+    auto assetsDir = File::getSpecialLocation (File::currentExecutableFile).getParentDirectory();
+
+    auto resourceFile = assetsDir.getChildFile (name);;
     auto inputStream = resourceFile.createInputStream();
     
     // create reader
@@ -46,6 +44,7 @@ void SamplerAudioSource::prepareToPlay (int samplesPerBlockExpected, double samp
 {
     midiCollector.reset (sampleRate);
     synth.setCurrentPlaybackSampleRate (sampleRate);
+    fxChain.prepare ({ sampleRate, (juce::uint32) samplesPerBlockExpected, 2 });
 }
     
 void SamplerAudioSource::getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill)
@@ -57,6 +56,10 @@ void SamplerAudioSource::getNextAudioBlock (const AudioSourceChannelInfo& buffer
     keyboardState.processNextMidiBuffer (incomingMidi, 0, bufferToFill.numSamples, true);
     
     synth.renderNextBlock (*bufferToFill.buffer, incomingMidi, 0, bufferToFill.numSamples);
+    
+    auto block = AudioBlock<float> (*bufferToFill.buffer).getSubBlock ((size_t) bufferToFill.startSample, (size_t) bufferToFill.numSamples);
+    auto context = ProcessContextReplacing<float> (block);
+    fxChain.process (context);
 }
     
 void SamplerAudioSource::releaseResources() {}

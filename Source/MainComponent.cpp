@@ -13,13 +13,11 @@ MainComponent::MainComponent()
 
     audioSourcePlayer.setSource (&samplerAudioSource);
     audioDeviceManager.addAudioCallback (&audioSourcePlayer);
-    audioDeviceManager.addMidiInputDeviceCallback ({}, &(samplerAudioSource.midiCollector));
 }
 
 MainComponent::~MainComponent()
 {
     audioSourcePlayer.setSource (nullptr);
-    audioDeviceManager.removeMidiInputDeviceCallback ({}, &(samplerAudioSource.midiCollector));
     audioDeviceManager.removeAudioCallback (&audioSourcePlayer);
 }
 
