@@ -32,5 +32,6 @@ private:
     
     //==============================================================================
     MidiKeyboardState& keyboardState;
-    ProcessorChain<Distortion<float>> fxChain;
+    // effects state
+    ProcessorChain<dsp::Reverb, Distortion<float>> fxChain;
 };

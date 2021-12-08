@@ -8,6 +8,7 @@ MainComponent::MainComponent()
     setSize (800, 600);
     
     addAndMakeVisible (padComponent);
+    addAndMakeVisible (controlsComponent);
     
     audioDeviceManager.initialise (2, 2, nullptr, true, {}, nullptr);
 
@@ -29,5 +30,8 @@ void MainComponent::paint (juce::Graphics& g)
 
 void MainComponent::resized()
 {
-    padComponent        .setBounds (8, 50, getWidth() - 16, getHeight() - 88);
+    int topMargin = 50;
+    int padHeight = getWidth() - 16;
+    padComponent        .setBounds (8, topMargin, getWidth() - 16, padHeight);
+    controlsComponent   .setBounds(8, topMargin + padHeight + 8, getWidth() - 16, 200);
 }

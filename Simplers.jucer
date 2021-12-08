@@ -8,37 +8,45 @@
       <FILE id="oxg4tz" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="uyasGm" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
-      <FILE id="VlLkLT" name="Distortion.cpp" compile="1" resource="0" file="Source/Distortion.cpp"/>
-      <FILE id="FfXz6Y" name="Distortion.hpp" compile="0" resource="0" file="Source/Distortion.hpp"/>
-      <FILE id="h4nUwC" name="MidiPadBoardComponent.cpp" compile="1" resource="0"
-            file="Source/MidiPadBoardComponent.cpp"/>
-      <FILE id="spRRVO" name="MidiPadBoardComponent.hpp" compile="0" resource="0"
-            file="Source/MidiPadBoardComponent.hpp"/>
-      <FILE id="pXztCZ" name="PadButton.cpp" compile="1" resource="0" file="Source/PadButton.cpp"/>
-      <FILE id="STRsQH" name="PadButton.hpp" compile="0" resource="0" file="Source/PadButton.hpp"/>
-      <FILE id="QwdH6i" name="SamplerAudioSource.cpp" compile="1" resource="0"
-            file="Source/SamplerAudioSource.cpp"/>
-      <FILE id="xw8950" name="SamplerAudioSource.hpp" compile="0" resource="0"
-            file="Source/SamplerAudioSource.hpp"/>
+      <GROUP id="{D9FB0A4E-6255-F110-A81A-7ED1554589E7}" name="Audio">
+        <FILE id="VlLkLT" name="Distortion.cpp" compile="1" resource="0" file="Source/Distortion.cpp"/>
+        <FILE id="FfXz6Y" name="Distortion.hpp" compile="0" resource="0" file="Source/Distortion.hpp"/>
+        <FILE id="QwdH6i" name="SamplerAudioSource.cpp" compile="1" resource="0"
+              file="Source/SamplerAudioSource.cpp"/>
+        <FILE id="xw8950" name="SamplerAudioSource.hpp" compile="0" resource="0"
+              file="Source/SamplerAudioSource.hpp"/>
+      </GROUP>
+      <GROUP id="{B3122DB0-0270-2B58-441E-FFB3C502F52A}" name="UI">
+        <FILE id="xLDqeA" name="ControlsComponent.cpp" compile="1" resource="0"
+              file="Source/ControlsComponent.cpp"/>
+        <FILE id="PL80GS" name="ControlsComponent.h" compile="0" resource="0"
+              file="Source/ControlsComponent.h"/>
+        <FILE id="h4nUwC" name="MidiPadBoardComponent.cpp" compile="1" resource="0"
+              file="Source/MidiPadBoardComponent.cpp"/>
+        <FILE id="spRRVO" name="MidiPadBoardComponent.hpp" compile="0" resource="0"
+              file="Source/MidiPadBoardComponent.hpp"/>
+        <FILE id="pXztCZ" name="PadButton.cpp" compile="1" resource="0" file="Source/PadButton.cpp"/>
+        <FILE id="STRsQH" name="PadButton.hpp" compile="0" resource="0" file="Source/PadButton.hpp"/>
+      </GROUP>
     </GROUP>
     <GROUP id="{E077EDA0-EE6F-2801-3A52-929F77799056}" name="Assets">
-      <FILE id="pj9BDa" name="clap.wav" compile="0" resource="1" file="Assets/clap.wav"
+      <FILE id="pj9BDa" name="clap.wav" compile="0" resource="0" file="Assets/clap.wav"
             xcodeResource="1"/>
-      <FILE id="No96Pv" name="clave.wav" compile="0" resource="1" file="Assets/clave.wav"
+      <FILE id="No96Pv" name="clave.wav" compile="0" resource="0" file="Assets/clave.wav"
             xcodeResource="1"/>
-      <FILE id="sBJDBY" name="crash.wav" compile="0" resource="1" file="Assets/crash.wav"
+      <FILE id="sBJDBY" name="crash.wav" compile="0" resource="0" file="Assets/crash.wav"
             xcodeResource="1"/>
-      <FILE id="kapJ1f" name="hat1.wav" compile="0" resource="1" file="Assets/hat1.wav"
+      <FILE id="kapJ1f" name="hat1.wav" compile="0" resource="0" file="Assets/hat1.wav"
             xcodeResource="1"/>
-      <FILE id="UCvpUA" name="hat2.wav" compile="0" resource="1" file="Assets/hat2.wav"
+      <FILE id="UCvpUA" name="hat2.wav" compile="0" resource="0" file="Assets/hat2.wav"
             xcodeResource="1"/>
-      <FILE id="BK8Hvw" name="hat3.wav" compile="0" resource="1" file="Assets/hat3.wav"
+      <FILE id="BK8Hvw" name="hat3.wav" compile="0" resource="0" file="Assets/hat3.wav"
             xcodeResource="1"/>
-      <FILE id="PXGsH5" name="kick1.wav" compile="0" resource="1" file="Assets/kick1.wav"
+      <FILE id="PXGsH5" name="kick1.wav" compile="0" resource="0" file="Assets/kick1.wav"
             xcodeResource="1"/>
-      <FILE id="QLdzcu" name="kick2.wav" compile="0" resource="1" file="Assets/kick2.wav"
+      <FILE id="QLdzcu" name="kick2.wav" compile="0" resource="0" file="Assets/kick2.wav"
             xcodeResource="1"/>
-      <FILE id="MPSiRi" name="sn1.wav" compile="0" resource="1" file="Assets/sn1.wav"
+      <FILE id="MPSiRi" name="sn1.wav" compile="0" resource="0" file="Assets/sn1.wav"
             xcodeResource="1"/>
     </GROUP>
   </MAINGROUP>

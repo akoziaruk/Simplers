@@ -36,6 +36,10 @@
 		<data>
 		/cqbS3EezXxTY3PN7csC16KEwXQ=
 		</data>
+		<key>embedded.mobileprovision</key>
+		<data>
+		MebG99fnD3on4MaWvUoupr5O66g=
+		</data>
 		<key>hat1.wav</key>
 		<data>
 		AIW1X1v7HB/SqgxexqtNkoUeD6M=
@@ -103,6 +107,13 @@
 			<key>hash2</key>
 			<data>
 			nfF5DEczqBTPNOJLNrPWPvR1QjaQL1peDg1fXxQzr/g=
+			</data>
+		</dict>
+		<key>embedded.mobileprovision</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kl5TGD7CKAiFu1XEFIhaPGtNfeOFnwdRiBawOAUt6W4=
 			</data>
 		</dict>
 		<key>hat1.wav</key>

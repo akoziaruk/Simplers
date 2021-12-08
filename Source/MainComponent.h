@@ -3,6 +3,7 @@
 #include <JuceHeader.h>
 #include "SamplerAudioSource.hpp"
 #include "MidiPadBoardComponent.hpp"
+#include "ControlsComponent.h"
 
 using namespace juce;
 
@@ -30,6 +31,8 @@ private:
     
     MidiKeyboardState keyboardState;
     MidiPadBoardComponent padComponent { keyboardState };
+    
+    ControlsComponent controlsComponent;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

@@ -25,7 +25,7 @@ public:
         };
         
         auto& preGain = processorChain.template get<preGainIndex>();
-        preGain.setGainDecibels (30.0f);
+        preGain.setGainDecibels (50.0f);
          
         auto& postGain = processorChain.template get<postGainIndex>();
         postGain.setGainDecibels (-20.0f);
