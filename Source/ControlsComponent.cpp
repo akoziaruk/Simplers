@@ -10,7 +10,7 @@
 
 #include "ControlsComponent.h"
 
-ControlsComponent::ControlsComponent()
+ControlsComponent::ControlsComponent(ControlsComponentState& s): state(s)
 {
     addAndMakeVisible (reverbSlider);
     reverbSlider.setRange (0, 1);
@@ -33,7 +33,10 @@ ControlsComponent::ControlsComponent()
     distortionLabel.attachToComponent (&distortionSlider, true);
 }
 
-ControlsComponent::~ControlsComponent(){}
+ControlsComponent::~ControlsComponent(){
+    reverbSlider.removeListener (this);
+    distortionSlider.removeListener (this);
+}
 
 void ControlsComponent::resized()
 {
@@ -56,5 +59,9 @@ void ControlsComponent::paint(Graphics &g)
 
 void ControlsComponent::sliderValueChanged (juce::Slider* slider)
 {
-    // Send events to update sound effect
+    if (slider == &reverbSlider) {
+        state.setReverb (slider->getValue());
+    } else if (slider == &distortionSlider) {
+        state.setDistortion (slider->getValue());
+    }
 }

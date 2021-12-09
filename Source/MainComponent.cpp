@@ -14,12 +14,15 @@ MainComponent::MainComponent()
 
     audioSourcePlayer.setSource (&samplerAudioSource);
     audioDeviceManager.addAudioCallback (&audioSourcePlayer);
+    
+    controlsState.setListener(&samplerAudioSource);
 }
 
 MainComponent::~MainComponent()
 {
     audioSourcePlayer.setSource (nullptr);
     audioDeviceManager.removeAudioCallback (&audioSourcePlayer);
+    controlsState.removeListener(&samplerAudioSource);
 }
 
 //==============================================================================

@@ -46,11 +46,11 @@ void MidiPadBoardComponent::resized()
     int index = 0;
     for (int i = 0; i < 3; i++)
     {
-        for (int k = 0; k < 3; k++)
+        for (int j = 0; j < 3; j++)
         {
             float m = 8;
             float side = (getWidth()-m)/3-m;
-            float x = k*(side+m)+m; float y = i*(side+m)+m;
+            float x = j*(side+m)+m; float y = i*(side+m)+m;
             pads[index++]->setBounds (x,y,side,side);
         }
     }

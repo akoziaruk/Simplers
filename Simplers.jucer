@@ -17,10 +17,16 @@
               file="Source/SamplerAudioSource.hpp"/>
       </GROUP>
       <GROUP id="{B3122DB0-0270-2B58-441E-FFB3C502F52A}" name="UI">
-        <FILE id="xLDqeA" name="ControlsComponent.cpp" compile="1" resource="0"
-              file="Source/ControlsComponent.cpp"/>
-        <FILE id="PL80GS" name="ControlsComponent.h" compile="0" resource="0"
-              file="Source/ControlsComponent.h"/>
+        <GROUP id="{B68CE822-3BC1-099E-7A14-6F754B81EF5D}" name="ControlsComponent">
+          <FILE id="I50XOO" name="ControlsComponentState.cpp" compile="1" resource="0"
+                file="Source/ControlsComponentState.cpp"/>
+          <FILE id="gxAEgd" name="ControlsComponentState.h" compile="0" resource="0"
+                file="Source/ControlsComponentState.h"/>
+          <FILE id="xLDqeA" name="ControlsComponent.cpp" compile="1" resource="0"
+                file="Source/ControlsComponent.cpp"/>
+          <FILE id="PL80GS" name="ControlsComponent.h" compile="0" resource="0"
+                file="Source/ControlsComponent.h"/>
+        </GROUP>
         <FILE id="h4nUwC" name="MidiPadBoardComponent.cpp" compile="1" resource="0"
               file="Source/MidiPadBoardComponent.cpp"/>
         <FILE id="spRRVO" name="MidiPadBoardComponent.hpp" compile="0" resource="0"

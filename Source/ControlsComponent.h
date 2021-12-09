@@ -9,6 +9,7 @@
 */
 
 #include <JuceHeader.h>
+#include "ControlsComponentState.h"
 
 using namespace juce;
 
@@ -17,9 +18,9 @@ class ControlsComponent  : public Component,
 {
 public:
     //==============================================================================
-    ControlsComponent();
+    ControlsComponent(ControlsComponentState& state);
     ~ControlsComponent();
-        
+    
 private:
     //==============================================================================
     void resized() override;
@@ -32,5 +33,7 @@ private:
     Slider distortionSlider;
     Label  distortionLabel;
 
+    ControlsComponentState& state;
+    
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ControlsComponent)
 };

@@ -42,7 +42,6 @@ void SamplerAudioSource::addSound(String name, int note)
     
 void SamplerAudioSource::prepareToPlay (int samplesPerBlockExpected, double sampleRate)
 {
-    midiCollector.reset (sampleRate);
     synth.setCurrentPlaybackSampleRate (sampleRate);
     fxChain.prepare ({ sampleRate, (juce::uint32) samplesPerBlockExpected, 2 });
 }
@@ -52,9 +51,7 @@ void SamplerAudioSource::getNextAudioBlock (const AudioSourceChannelInfo& buffer
     bufferToFill.clearActiveBufferRegion();
     
     MidiBuffer incomingMidi;
-    midiCollector.removeNextBlockOfMessages (incomingMidi, bufferToFill.numSamples);
     keyboardState.processNextMidiBuffer (incomingMidi, 0, bufferToFill.numSamples, true);
-    
     synth.renderNextBlock (*bufferToFill.buffer, incomingMidi, 0, bufferToFill.numSamples);
     
     auto block = AudioBlock<float> (*bufferToFill.buffer).getSubBlock ((size_t) bufferToFill.startSample, (size_t) bufferToFill.numSamples);
@@ -62,4 +59,25 @@ void SamplerAudioSource::getNextAudioBlock (const AudioSourceChannelInfo& buffer
     fxChain.process (context);
 }
     
+void SamplerAudioSource::handleValueChanged(ControlsComponentState *source, ComponentStateControl control, float value)
+{
+    switch (control) {
+        case ControlsComponentState::reverb: {
+            
+            auto& reverb = fxChain.template get<reverbIndex>();
+            auto params = reverb.getParameters();
+            params.wetLevel = value;
+            reverb.setParameters(params);
+            
+            break;
+        }
+        case ControlsComponentState::distortion: {
+            //  auto& distoriton = fxChain.template get<distortionIndex>();
+            break;
+        }
+
+    }
+
+}
+
 void SamplerAudioSource::releaseResources() {}
