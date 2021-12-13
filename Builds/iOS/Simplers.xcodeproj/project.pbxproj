@@ -21,6 +21,7 @@
 		3AA046CB01B0B20C230CFB3A /* kick2.wav */ = {isa = PBXBuildFile; fileRef = 599656B08FBC3A6E89A6349D; };
 		3D76C75949269B73F8251492 /* include_juce_gui_extra.mm */ = {isa = PBXBuildFile; fileRef = 31213FC0AC45400B7EE67903; };
 		4B62B0D118023784C42B1119 /* clap.wav */ = {isa = PBXBuildFile; fileRef = 56AEAAB1E26FDAEB8D3776BA; };
+		500C625EED59C705721058F6 /* ControlsRowComponent.cpp */ = {isa = PBXBuildFile; fileRef = AFD45C743F3BA71D7BBCBCCA; };
 		564AA333B7B2C2A928FDA328 /* CoreMIDI.framework */ = {isa = PBXBuildFile; fileRef = D41B043FEAF7267E89D7D898; };
 		5B83A7DF5A4D03A5C277FBFB /* include_juce_audio_utils.mm */ = {isa = PBXBuildFile; fileRef = 638186D843BB703D0BC4A0B9; };
 		5BEED7DD920EC28739F11F05 /* include_juce_audio_processors.mm */ = {isa = PBXBuildFile; fileRef = 08C497796F520051257E87E5; };
@@ -91,6 +92,7 @@
 		72C784D4A0571A2AE39AB9C2 /* PadButton.cpp */ /* PadButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PadButton.cpp; path = ../../Source/PadButton.cpp; sourceTree = SOURCE_ROOT; };
 		759BF279B43C2A9A87B77BAB /* MidiPadBoardComponent.cpp */ /* MidiPadBoardComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MidiPadBoardComponent.cpp; path = ../../Source/MidiPadBoardComponent.cpp; sourceTree = SOURCE_ROOT; };
 		7770F77DDB49D72EF1775990 /* juce_core */ /* juce_core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_core; path = /Users/alex/Work/Audio/JUCE/modules/juce_core; sourceTree = "<absolute>"; };
+		78A39A8D40E75870BA18B7EF /* ControlsRowComponent.h */ /* ControlsRowComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ControlsRowComponent.h; path = ../../Source/ControlsRowComponent.h; sourceTree = SOURCE_ROOT; };
 		7E0EC28E1B0F1393ECB8003E /* QuartzCore.framework */ /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84F8B020379B36B0467B395F /* juce_data_structures */ /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_data_structures; path = /Users/alex/Work/Audio/JUCE/modules/juce_data_structures; sourceTree = "<absolute>"; };
 		864466545D73AF538C5EB00C /* juce_audio_processors */ /* juce_audio_processors */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_processors; path = /Users/alex/Work/Audio/JUCE/modules/juce_audio_processors; sourceTree = "<absolute>"; };
@@ -104,6 +106,7 @@
 		A6E8CFE2D71A77A8484CF74A /* Distortion.hpp */ /* Distortion.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Distortion.hpp; path = ../../Source/Distortion.hpp; sourceTree = SOURCE_ROOT; };
 		AD7EAE99C749376167FBF8E2 /* juce_gui_basics */ /* juce_gui_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_basics; path = /Users/alex/Work/Audio/JUCE/modules/juce_gui_basics; sourceTree = "<absolute>"; };
 		AF675E25A9CAFA0ECB19B080 /* hat3.wav */ /* hat3.wav */ = {isa = PBXFileReference; lastKnownFileType = file.wav; name = hat3.wav; path = ../../Assets/hat3.wav; sourceTree = SOURCE_ROOT; };
+		AFD45C743F3BA71D7BBCBCCA /* ControlsRowComponent.cpp */ /* ControlsRowComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ControlsRowComponent.cpp; path = ../../Source/ControlsRowComponent.cpp; sourceTree = SOURCE_ROOT; };
 		B5257090E26DE656E3BCF004 /* juce_gui_extra */ /* juce_gui_extra */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_extra; path = /Users/alex/Work/Audio/JUCE/modules/juce_gui_extra; sourceTree = "<absolute>"; };
 		B7E86C90A21090925593319E /* App */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simplers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD53F9003F34199D884ECB9 /* include_juce_dsp.mm */ /* include_juce_dsp.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_dsp.mm; path = ../../JuceLibraryCode/include_juce_dsp.mm; sourceTree = SOURCE_ROOT; };
@@ -296,6 +299,8 @@
 		F6689FCEAD0984B2D47F302D /* ControlsComponent */ = {
 			isa = PBXGroup;
 			children = (
+				AFD45C743F3BA71D7BBCBCCA,
+				78A39A8D40E75870BA18B7EF,
 				134A7ED988CA3CC4DC76E462,
 				7103EA4102D95C72D89BEFE4,
 				EDF92D45E8F888EB624DF9D8,
@@ -405,6 +410,7 @@
 				EC01D0ABB93F829052FED59D,
 				09FF5E4269730668CE758BD5,
 				DBC7190F45727A5C6F6D299C,
+				500C625EED59C705721058F6,
 				0545E7AA6DC7F306ADA0EBC3,
 				7882229219477A6FB257A524,
 				9382E44797EDD3D4C58F772A,

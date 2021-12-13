@@ -10,11 +10,12 @@
 
 #include <JuceHeader.h>
 #include "ControlsComponentState.h"
+#include "ControlsRowComponent.h"
 
 using namespace juce;
 
 class ControlsComponent  : public Component,
-                           public Slider::Listener
+                           public ControlsRowComponent::Listener
 {
 public:
     //==============================================================================
@@ -25,15 +26,13 @@ private:
     //==============================================================================
     void resized() override;
     void paint(Graphics &g) override;
-    void sliderValueChanged (Slider* slider) override;
+    void handleValueChanged(ControlsRowComponent* source, int index, float value) override;
     
     //==============================================================================
-    Slider reverbSlider;
-    Label  reverbLabel;
-    Slider distortionSlider;
-    Label  distortionLabel;
-
     ControlsComponentState& state;
+    
+    ControlsRowComponent reverbControls { "Reverb", Array<String>("Dry", "Wet", "Room", "Damping", "Width", "Freeze") };
+    //ControlsRowComponent distortionControls
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ControlsComponent)
 };
