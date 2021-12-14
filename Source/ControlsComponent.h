@@ -28,11 +28,16 @@ private:
     void paint(Graphics &g) override;
     void handleValueChanged(ControlsRowComponent* source, int index, float value) override;
     
+    void updateParameters(Parameters::Reverb* reverb, int index, float value);
+    void updateParameters(Parameters::Distortion* distortion, int index, float value);
+
     //==============================================================================
     ControlsComponentState& state;
     
-    ControlsRowComponent reverbControls { "Reverb", Array<String>("Dry", "Wet", "Room", "Damping", "Width", "Freeze") };
-    //ControlsRowComponent distortionControls
+    ControlsRowComponent reverbControls { "Reverb" };
+    enum Reverb: uint { dry, wet, room, damping, width, freeze };
     
+    // ControlsRowComponent distortionControls
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ControlsComponent)
 };

@@ -10,16 +10,20 @@
 
 #include "ControlsRowComponent.h"
 
-ControlsRowComponent::ControlsRowComponent(String title, Array<String> s): titles(s)
+ControlsRowComponent::ControlsRowComponent(String title)
 {
     addAndMakeVisible(titleLabel);
     titleLabel.setText(title, juce::dontSendNotification);
     titleLabel.setColour(Label::textColourId, Colours::black);
     titleLabel.setFont(Font(17, Font::bold));
+}
 
-    for (int i = 0; i < titles.size(); i++) {
-        addSlider();
-        addLabel(titles[i]);
+void ControlsRowComponent::setSlidersData(Array<SliderData> items)
+{
+    for (int i = 0; i < items.size(); i++) {
+        auto item = items[i];
+        addSlider(item.value);
+        addLabel(item.name);
     }
 }
 
@@ -40,15 +44,18 @@ void ControlsRowComponent::removeListener(Listener *l)
     listener = NULL;
 }
 
-void ControlsRowComponent::addSlider()
+void ControlsRowComponent::addSlider(float value)
 {
     auto slider = new Slider(Slider::Rotary, Slider::TextEntryBoxPosition::NoTextBox);
-    addAndMakeVisible(slider);
+    
+    slider->setValue(value);
     slider->setRange(0, 1);
     slider->setColour(Slider::textBoxTextColourId, Colours::black);
     slider->addListener(this);
     
     sliders.add(slider);
+    
+    addAndMakeVisible(slider);
 }
 
 void ControlsRowComponent::addLabel(String title)
@@ -78,7 +85,7 @@ void ControlsRowComponent::resized()
 {
     titleLabel.setBounds(8, 0, 100, 40);
     
-    int sliderSide = 60;
+    int sliderSide = jmin(60, getWidth()/sliders.size());
     int labelWidth = 80;
     
     for (int i = 0; i < sliders.size(); i++)

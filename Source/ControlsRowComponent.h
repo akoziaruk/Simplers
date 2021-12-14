@@ -19,8 +19,18 @@ class ControlsRowComponent  : public Component,
 {
 public:
     //==============================================================================
-    ControlsRowComponent(String, Array<String>);
+    struct SliderData {
+        String name;
+        float value;
+        
+        SliderData(String n, float v) { name = n; value = v; }
+        SliderData() {};
+    };
+    
+    ControlsRowComponent(String);
     ~ControlsRowComponent();
+    
+    void setSlidersData(Array<SliderData>);
     
     class Listener
     {
@@ -31,14 +41,14 @@ public:
     
     void setListener(Listener* listener);
     void removeListener(Listener* listener);
-    
+        
 private:
     //==============================================================================
     void resized() override;
     void paint(Graphics &g) override;
     void sliderValueChanged (Slider* slider) override;
     
-    void addSlider();
+    void addSlider(float value);
     void addLabel(String title);
     void resizeSlider(Slider* slider);
     void resizeLabel(Label* slider);
@@ -50,7 +60,8 @@ private:
 
     Array<Slider*> sliders;
     Array<Label*> labels;
-    Array<String> titles;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ControlsRowComponent)
 };
+
+using SliderData = ControlsRowComponent::SliderData;

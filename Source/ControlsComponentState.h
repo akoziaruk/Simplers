@@ -10,44 +10,35 @@
 
 #pragma once
 #include <JuceHeader.h>
+#import "Parameters.h"
 
 class ControlsComponentState
 {
 public:
     //==============================================================================
-    ControlsComponentState();
-
-    enum Control {
-        distortion,
-        reverb
-    };
+    ControlsComponentState() {};
     
     class Listener
     {
     public:
         virtual ~Listener() = default;
-        virtual void handleValueChanged(ControlsComponentState* source, Control control, float value) = 0;
+        virtual void handleValueChanged(ControlsComponentState* source, Parameters parameters) = 0;
     };
     
-    void setListener(Listener* listener);
-    void removeListener (Listener* listener);
-    void setReverb(float value);
-    void setDistortion(float value);
-
+    void setListener(Listener* l)        { listener = l; };
+    void removeListener (Listener* l)    { listener = NULL; };
+    
+    Parameters getParameters() { return parameters; };
+    void setParameters(Parameters p) { parameters = p; listener->handleValueChanged(this, parameters); };
     
 private:
-    //==============================================================================
 
-    
     //==============================================================================
     Listener* listener;
-    
-    float reverbValue = 0;
-    float distortionValue = 0;
+    Parameters parameters;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ControlsComponentState)
 };
 
 using ControlsComponentStateListener = ControlsComponentState::Listener;
-using ComponentStateControl = ControlsComponentState::Control;
 

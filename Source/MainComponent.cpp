@@ -16,6 +16,10 @@ MainComponent::MainComponent()
     audioDeviceManager.addAudioCallback (&audioSourcePlayer);
     
     controlsState.setListener(&samplerAudioSource);
+    
+    auto parameters = Parameters();
+    samplerAudioSource.setParameters(parameters);
+    controlsState.setParameters(parameters);
 }
 
 MainComponent::~MainComponent()

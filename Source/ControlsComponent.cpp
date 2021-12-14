@@ -12,8 +12,19 @@
 
 ControlsComponent::ControlsComponent(ControlsComponentState& s): state(s)
 {
+    auto parameters = state.getParameters();
+    
+    reverbControls.setSlidersData(Array<SliderData>(SliderData("Dry",       parameters.reverb.dry),
+                                                    SliderData("Wet",       parameters.reverb.wet),
+                                                    SliderData("Room",      parameters.reverb.room),
+                                                    SliderData("Damping",   parameters.reverb.damping),
+                                                    SliderData("Width",     parameters.reverb.width),
+                                                    SliderData("Freeze",    parameters.reverb.freeze)));
+    
     reverbControls.setListener(this);
-    addAndMakeVisible (reverbControls);
+    addAndMakeVisible(reverbControls);
+    
+    //TODO: setup distortion sliders
 }
 
 ControlsComponent::~ControlsComponent()
@@ -40,9 +51,37 @@ void ControlsComponent::paint(Graphics &g)
 
 void ControlsComponent::handleValueChanged(ControlsRowComponent *source, int index, float value)
 {
-    if (source == &reverbControls) {
-        // effect for index
-        // state reverb set parameters
+    auto parameters = state.getParameters();
 
+    if (source == &reverbControls) {
+        updateParameters(&parameters.reverb, index, value);
     }
+//    else (source == &distortionControls) {
+//        updateParameters(&parameters.distortion);
+//    }
+    
+    state.setParameters(parameters);
+}
+
+void ControlsComponent::updateParameters(Parameters::Reverb *reverb, int index, float value)
+{
+    switch (Reverb(index)) {
+        case dry:
+            reverb->dry = value;        break;
+        case wet:
+            reverb->wet = value;        break;
+        case room:
+            reverb->room = value;       break;
+        case damping:
+            reverb->damping = value;    break;
+        case width:
+            reverb->width = value;      break;
+        case freeze:
+            reverb->freeze = value;     break;
+    }
+}
+
+void ControlsComponent::updateParameters(Parameters::Distortion *distortion, int index, float value)
+{
+    //TODO: update distortion paramerers
 }

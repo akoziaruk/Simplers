@@ -59,25 +59,40 @@ void SamplerAudioSource::getNextAudioBlock (const AudioSourceChannelInfo& buffer
     fxChain.process (context);
 }
     
-void SamplerAudioSource::handleValueChanged(ControlsComponentState *source, ComponentStateControl control, float value)
+void SamplerAudioSource::handleValueChanged(ControlsComponentState *source, Parameters parameters)
 {
-    switch (control) {
-        case ControlsComponentState::reverb: {
-            
-            auto& reverb = fxChain.template get<reverbIndex>();
-            auto params = reverb.getParameters();
-            params.wetLevel = value;
-            reverb.setParameters(params);
-            
-            break;
-        }
-        case ControlsComponentState::distortion: {
-            //  auto& distoriton = fxChain.template get<distortionIndex>();
-            break;
-        }
+    updateEffectsWithParameters(parameters);
+}
 
-    }
+void SamplerAudioSource::setParameters(Parameters parameters)
+{
+    updateEffectsWithParameters(parameters);
+}
 
+void SamplerAudioSource::updateEffectsWithParameters(Parameters parameters)
+{
+    updateReverb(parameters.reverb);
+    updateDistortion(parameters.distortion);
+}
+
+void SamplerAudioSource::updateReverb(Parameters::Reverb params)
+{
+    auto& reverb = fxChain.template get<reverbIndex>();
+    auto effectParams = reverb.getParameters();
+    
+    effectParams.dryLevel = params.dry;
+    effectParams.wetLevel = params.wet;
+    effectParams.roomSize = params.room;
+    effectParams.damping = params.damping;
+    effectParams.width = params.width;
+    effectParams.freezeMode = params.freeze;
+
+    reverb.setParameters(effectParams);
+}
+
+void SamplerAudioSource::updateDistortion(Parameters::Distortion parameters)
+{
+    //            //  auto& distoriton = fxChain.template get<distortionIndex>();
 }
 
 void SamplerAudioSource::releaseResources() {}

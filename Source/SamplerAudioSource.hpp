@@ -23,7 +23,8 @@ public:
     void prepareToPlay (int samplesPerBlockExpected, double sampleRate) override;
     void getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill) override;
     void releaseResources() override;
-    void handleValueChanged(ControlsComponentState* source, ComponentStateControl control, float value) override;
+    void handleValueChanged(ControlsComponentState* source, Parameters parameters) override;
+    void setParameters(Parameters parameters);
 
     //==============================================================================
     Synthesiser synth;
@@ -31,7 +32,10 @@ public:
 private:
     //==============================================================================
     void addSound(String name, int note);
-    
+    void updateEffectsWithParameters(Parameters parameters);
+    void updateReverb(Parameters::Reverb parameters);
+    void updateDistortion(Parameters::Distortion parameters);
+
     //==============================================================================
     MidiKeyboardState& keyboardState;
     
