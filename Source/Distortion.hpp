@@ -23,12 +23,20 @@ public:
         {
             return std::tanh (x);
         };
-        
+    }
+    
+    void setPreGain (float value) //value in range 0..1
+    {
+        float decibels = jmap<float>(value, 20, 70);
         auto& preGain = processorChain.template get<preGainIndex>();
-        preGain.setGainDecibels (50.0f);
-         
+        preGain.setGainDecibels (decibels);
+    }
+
+    void setPostGain (float value) //value in range 0..1
+    {
+        float decibels = jmap<float>(value, -50, 0);
         auto& postGain = processorChain.template get<postGainIndex>();
-        postGain.setGainDecibels (-20.0f);
+        postGain.setGainDecibels (decibels);
     }
 
     //==============================================================================
@@ -55,13 +63,13 @@ public:
         waveshaperIndex,
         postGainIndex
     };
-     
+
     using Filter = juce::dsp::IIR::Filter<Type>;
     using FilterCoefs = juce::dsp::IIR::Coefficients<Type>;
- 
+
     juce::dsp::ProcessorChain<juce::dsp::ProcessorDuplicator<Filter, FilterCoefs>,
                               juce::dsp::Gain<Type>, juce::dsp::WaveShaper<Type>, juce::dsp::Gain<Type>> processorChain;
-        
+
     void reset() noexcept {
         processorChain.reset();
     }

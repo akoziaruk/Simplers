@@ -92,7 +92,9 @@ void SamplerAudioSource::updateReverb(Parameters::Reverb params)
 
 void SamplerAudioSource::updateDistortion(Parameters::Distortion parameters)
 {
-    //            //  auto& distoriton = fxChain.template get<distortionIndex>();
+    auto& distoriton = fxChain.template get<distortionIndex>();
+    distoriton.setPreGain(parameters.preGain);
+    distoriton.setPostGain(parameters.postGain);
 }
 
 void SamplerAudioSource::releaseResources() {}

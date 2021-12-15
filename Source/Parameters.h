@@ -10,6 +10,10 @@
 
 #pragma once
 
+/*
+    Parameter values should be in range 0..1
+ */
+
 struct Parameters {
 
     struct Reverb {
@@ -22,10 +26,10 @@ struct Parameters {
     };
     
     struct Distortion {
-        
+        float preGain = 0.5;
+        float postGain = 0.6;
     };
     
     Reverb reverb;
     Distortion distortion;
-
 };

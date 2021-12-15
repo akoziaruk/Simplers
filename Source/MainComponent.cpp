@@ -40,5 +40,5 @@ void MainComponent::resized()
     int topMargin = 50;
     int padHeight = getWidth() - 16;
     padComponent        .setBounds (8, topMargin, getWidth() - 16, padHeight);
-    controlsComponent   .setBounds(8, topMargin + padHeight + 8, getWidth() - 16, 200);
+    controlsComponent   .setBounds(8, topMargin + padHeight + 8, getWidth() - 16, 224);
 }

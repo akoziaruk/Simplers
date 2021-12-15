@@ -37,7 +37,8 @@ private:
     ControlsRowComponent reverbControls { "Reverb" };
     enum Reverb: uint { dry, wet, room, damping, width, freeze };
     
-    // ControlsRowComponent distortionControls
+    ControlsRowComponent distortionControls { "Distortion" };
+    enum Distortion: uint { preGain, postGain };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ControlsComponent)
 };

@@ -85,13 +85,14 @@ void ControlsRowComponent::resized()
 {
     titleLabel.setBounds(8, 0, 100, 40);
     
-    int sliderSide = jmin(60, getWidth()/sliders.size());
     int labelWidth = 80;
+    int sliderSide = getWidth()/sliders.size();
+    int sliderWidth = jmin(labelWidth, sliderSide);
     
     for (int i = 0; i < sliders.size(); i++)
     {
-        sliders[i]->setBounds(i * sliderSide, 26, sliderSide, sliderSide);
-        labels[i]->setBounds((i * sliderSide) + (sliderSide - labelWidth)/2, 80, labelWidth, 18);
+        sliders[i]->setBounds(i * sliderWidth, 26, sliderWidth, jmin(60, sliderSide));
+        labels[i]->setBounds((i * sliderWidth) + (sliderWidth - labelWidth)/2, 80, labelWidth, 18);
     }
 }
 

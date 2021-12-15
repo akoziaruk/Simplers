@@ -24,17 +24,23 @@ ControlsComponent::ControlsComponent(ControlsComponentState& s): state(s)
     reverbControls.setListener(this);
     addAndMakeVisible(reverbControls);
     
-    //TODO: setup distortion sliders
+    distortionControls.setSlidersData(Array<SliderData>(SliderData("Pre Gain",    parameters.distortion.preGain),
+                                                        SliderData("Post Gain",   parameters.distortion.postGain)));
+    
+    distortionControls.setListener(this);
+    addAndMakeVisible(distortionControls);
 }
 
 ControlsComponent::~ControlsComponent()
 {
     reverbControls.removeListener(this);
+    distortionControls.removeListener(this);
 }
 
 void ControlsComponent::resized()
 {
     reverbControls.setBounds(8, 8, getWidth() - 16, 100);
+    distortionControls.setBounds(8, 116, getWidth() - 16, 100);
 }
 
 void ControlsComponent::paint(Graphics &g)
@@ -53,12 +59,14 @@ void ControlsComponent::handleValueChanged(ControlsRowComponent *source, int ind
 {
     auto parameters = state.getParameters();
 
-    if (source == &reverbControls) {
+    if (source == &reverbControls)
+    {
         updateParameters(&parameters.reverb, index, value);
     }
-//    else (source == &distortionControls) {
-//        updateParameters(&parameters.distortion);
-//    }
+    else if (source == &distortionControls)
+    {
+        updateParameters(&parameters.distortion, index, value);
+    }
     
     state.setParameters(parameters);
 }
@@ -83,5 +91,9 @@ void ControlsComponent::updateParameters(Parameters::Reverb *reverb, int index, 
 
 void ControlsComponent::updateParameters(Parameters::Distortion *distortion, int index, float value)
 {
-    //TODO: update distortion paramerers
-}
+    switch (Distortion(index)) {
+        case preGain:
+            distortion->preGain = value;      break;
+        case postGain:
+            distortion->postGain = value;     break;
+    }}
