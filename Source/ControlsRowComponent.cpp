@@ -8,7 +8,7 @@
   ==============================================================================
 */
 
-#include "ControlsRowComponent.h"
+#include "ControlsRowComponent.hpp"
 
 ControlsRowComponent::ControlsRowComponent(String title)
 {

@@ -1,10 +1,10 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "SamplerAudioSource.hpp"
-#include "MidiPadBoardComponent.hpp"
-#include "ControlsComponent.h"
-//#include "ControlsComponentState.h"
+#include "AudioEngine.hpp"
+#include "PadBoardComponent.hpp"
+#include "ControlsComponent.hpp"
+#include "SequencerComponent.hpp"
 
 using namespace juce;
 
@@ -13,7 +13,7 @@ using namespace juce;
     This component lives inside our window, and this is where you should put all
     your controls and content.
 */
-class MainComponent  : public juce::Component
+class MainComponent  : public Component
 {
 public:
     //==============================================================================
@@ -28,13 +28,11 @@ private:
     //==============================================================================
     AudioDeviceManager audioDeviceManager;
     AudioSourcePlayer audioSourcePlayer;
-    SamplerAudioSource samplerAudioSource        { keyboardState };
+    AudioEngine audioEngine;
     
-    MidiKeyboardState keyboardState;
-    MidiPadBoardComponent padComponent { keyboardState };
-    
-    ControlsComponentState controlsState;
-    ControlsComponent controlsComponent { controlsState };
+    PadBoardComponent   padComponent        { audioEngine.midiState };
+    ControlsComponent   controlsComponent   { audioEngine.audioEffectsState };
+    SequencerComponent  sequencerComponent  { audioEngine.midiSequencer };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

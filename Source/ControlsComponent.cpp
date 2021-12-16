@@ -8,9 +8,9 @@
   ==============================================================================
 */
 
-#include "ControlsComponent.h"
+#include "ControlsComponent.hpp"
 
-ControlsComponent::ControlsComponent(ControlsComponentState& s): state(s)
+ControlsComponent::ControlsComponent(AudioEffectsState& s): state(s)
 {
     auto parameters = state.getParameters();
     
