@@ -404,5 +404,235 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19ABE816-25D8-4B59-BCED-9E156CAAC080"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../JUCE/modules/juce_audio_basics/midi/juce_MidiKeyboardState.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "MidiKeyboardState::noteOnInternal(midiChannel, midiNoteNumber, velocity)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B94ABADB-59C2-4BA5-9E2F-6721839FE96B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../JUCE/modules/juce_audio_basics/midi/juce_MidiKeyboardState.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "MidiKeyboardState::noteOff(midiChannel, midiNoteNumber, velocity)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70803865-A504-4548-9A17-66ADED5BE14A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../JUCE/modules/juce_core/containers/juce_Array.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "768"
+            endingLineNumber = "768"
+            landmarkName = "remove(indexToRemove)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "70803865-A504-4548-9A17-66ADED5BE14A - 218f028df58c9f33"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "juce::Array&lt;juce::Array&lt;int, juce::DummyCriticalSection, 0&gt;*, juce::DummyCriticalSection, 0&gt;::remove(int)"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/JUCE/modules/juce_core/containers/juce_Array.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "769"
+                  endingLineNumber = "769"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "70803865-A504-4548-9A17-66ADED5BE14A - eb8e7f8dea9ec4c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "juce::Array&lt;int, juce::DummyCriticalSection, 0&gt;::remove(int)"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/JUCE/modules/juce_core/containers/juce_Array.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "769"
+                  endingLineNumber = "769"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "70803865-A504-4548-9A17-66ADED5BE14A - a77545ae39e1be92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "juce::Array&lt;juce::String, juce::DummyCriticalSection, 0&gt;::remove(int)"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/JUCE/modules/juce_core/containers/juce_Array.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "769"
+                  endingLineNumber = "769"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "70803865-A504-4548-9A17-66ADED5BE14A - 5671f36076084ed8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "juce::Array&lt;juce::ReadWriteLock::ThreadRecursionCount, juce::DummyCriticalSection, 0&gt;::remove(int)"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/JUCE/modules/juce_core/containers/juce_Array.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "769"
+                  endingLineNumber = "769"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "70803865-A504-4548-9A17-66ADED5BE14A - 4d223c420e13d0c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "juce::Array&lt;juce::Value*, juce::DummyCriticalSection, 0&gt;::remove(int)"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/JUCE/modules/juce_core/containers/juce_Array.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "769"
+                  endingLineNumber = "769"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "70803865-A504-4548-9A17-66ADED5BE14A - cb07585e647d52c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "juce::Array&lt;juce::PositionedGlyph, juce::DummyCriticalSection, 0&gt;::remove(int)"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/JUCE/modules/juce_core/containers/juce_Array.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "769"
+                  endingLineNumber = "769"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "70803865-A504-4548-9A17-66ADED5BE14A - a81be223b5003e28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "juce::Array&lt;juce::PathStrokeHelpers::LineSection, juce::DummyCriticalSection, 0&gt;::remove(int)"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/JUCE/modules/juce_core/containers/juce_Array.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "769"
+                  endingLineNumber = "769"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "70803865-A504-4548-9A17-66ADED5BE14A - 49d6006643bb4b27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "juce::Array&lt;juce::AttributedString::Attribute, juce::DummyCriticalSection, 0&gt;::remove(int)"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/JUCE/modules/juce_core/containers/juce_Array.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "769"
+                  endingLineNumber = "769"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "70803865-A504-4548-9A17-66ADED5BE14A - 526d4697abcbd3da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "juce::Array&lt;juce::Rectangle&lt;float&gt;, juce::DummyCriticalSection, 0&gt;::remove(int)"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/JUCE/modules/juce_core/containers/juce_Array.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "769"
+                  endingLineNumber = "769"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "70803865-A504-4548-9A17-66ADED5BE14A - daf1553b0e8e8d89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "juce::Array&lt;juce::Rectangle&lt;int&gt;, juce::DummyCriticalSection, 0&gt;::remove(int)"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/JUCE/modules/juce_core/containers/juce_Array.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "769"
+                  endingLineNumber = "769"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "70803865-A504-4548-9A17-66ADED5BE14A - ce1cd2b45a2fa08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "juce::Array&lt;juce::Component*, juce::DummyCriticalSection, 0&gt;::remove(int)"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/JUCE/modules/juce_core/containers/juce_Array.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "769"
+                  endingLineNumber = "769"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "70803865-A504-4548-9A17-66ADED5BE14A - 41bbbf162230e68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "juce::Array&lt;juce::MouseListener*, juce::DummyCriticalSection, 0&gt;::remove(int)"
+                  moduleName = "Simplers"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/Work/Audio/JUCE/modules/juce_core/containers/juce_Array.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "769"
+                  endingLineNumber = "769"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

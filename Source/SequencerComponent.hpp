@@ -11,7 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "MidiSequencer.hpp"
+#include "SequencerEngine.hpp"
 
 using namespace juce;
 
@@ -19,7 +19,7 @@ class SequencerComponent  : public Component
 {
 public:
     
-    SequencerComponent(MidiSequencer&);
+    SequencerComponent(SequencerEngine&);
  
 private:
     

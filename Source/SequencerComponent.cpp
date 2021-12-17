@@ -10,6 +10,6 @@
 
 #include "SequencerComponent.hpp"
 
-SequencerComponent::SequencerComponent(MidiSequencer& s) {
+SequencerComponent::SequencerComponent(SequencerEngine& s) {
     
 }

@@ -10,7 +10,7 @@
 #include <JuceHeader.h>
 #include "Distortion.hpp"
 #include "AudioEffectsState.hpp"
-#include "MidiSequencer.hpp"
+#include "SequencerEngine.hpp"
 
 using namespace juce;
 using namespace dsp;
@@ -30,7 +30,7 @@ public:
     void setParameters(Parameters parameters);
 
     //==============================================================================
-    MidiSequencer midiSequencer;
+    SequencerEngine midiSequencer { 16 };
     MidiKeyboardState midiState;
     AudioEffectsState audioEffectsState;
 
