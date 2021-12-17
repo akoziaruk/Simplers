@@ -22,8 +22,12 @@ PadBoardComponent::PadBoardComponent(MidiKeyboardState& s): state(s)
 
 PadBoardComponent::~PadBoardComponent()
 {
-    for (int i = 0; i < pads.size(); i++) {
-        pads[i]->removeListener (this);
+    for (int i = pads.size()-1; i > 0 ; i--) {
+        PadButton* button = pads[i];
+        button->removeListener(this);
+        pads.remove(i);
+        
+        delete button;
     }
 }
 
@@ -43,13 +47,14 @@ void PadBoardComponent::buttonStateChanged(Button* button)
 void PadBoardComponent::resized()
 {
     // resize pads
+    float m = 8;
+    float side = (getHeight()-m)/3-m;
     int index = 0;
+    
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
         {
-            float m = 8;
-            float side = (getWidth()-m)/3-m;
             float x = j*(side+m)+m; float y = i*(side+m)+m;
             pads[index++]->setBounds (x,y,side,side);
         }

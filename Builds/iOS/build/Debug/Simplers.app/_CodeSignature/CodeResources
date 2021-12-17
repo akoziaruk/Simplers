@@ -6,7 +6,7 @@
 	<dict>
 		<key>Info.plist</key>
 		<data>
-		BsSlpDWKqKuu6FSk/NgLaCCU9ZQ=
+		uYv3VavMEtl4Lln+dsXTPVpBNAs=
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -69,6 +69,10 @@
 	<dict>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			qawDhI6TsCIkoq3KtyzZsu3rfFw=
+			</data>
 			<key>hash2</key>
 			<data>
 			iND/D8VUpZPEyfP8IchZpst00/t0paZFuhgEzCgCZ4o=
@@ -76,6 +80,10 @@
 		</dict>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			n2t8gsDpfE6XkhG31p7IQJRxTxU=
+			</data>
 			<key>hash2</key>
 			<data>
 			HyVdXMU7Ux4/KalAao30mpWOK/lEPT4gvYN09wf31cg=
@@ -83,6 +91,10 @@
 		</dict>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			U0x8EM0781fCPb62BbZIXKeDlZ4=
+			</data>
 			<key>hash2</key>
 			<data>
 			cWq7q+iQcmpSoaFGecnyPdKFEPFwRD3slgUmxFADkVs=
@@ -90,6 +102,10 @@
 		</dict>
 		<key>clap.wav</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			PajaR2106V+lwQ6AIY6LTur5dVs=
+			</data>
 			<key>hash2</key>
 			<data>
 			WjqDgZQ+cTcJ1kcujqHn7leS6lEi0+ECLINLaJZbFvw=
@@ -97,6 +113,10 @@
 		</dict>
 		<key>clave.wav</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			bmnDO+iqGLgSSs3UfxsDxoT8e6g=
+			</data>
 			<key>hash2</key>
 			<data>
 			3CD12rsimTQyahDQMCt/GIr0xfu7pVSgaNgShomh8og=
@@ -104,6 +124,10 @@
 		</dict>
 		<key>crash.wav</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			/cqbS3EezXxTY3PN7csC16KEwXQ=
+			</data>
 			<key>hash2</key>
 			<data>
 			nfF5DEczqBTPNOJLNrPWPvR1QjaQL1peDg1fXxQzr/g=
@@ -111,6 +135,10 @@
 		</dict>
 		<key>embedded.mobileprovision</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			uBNMulMXtgyCOfPdEtk/873dyM4=
+			</data>
 			<key>hash2</key>
 			<data>
 			wbAddjJbdR0pEXJJXdqC+d7D+C4baOz+/+ph2vq/F5w=
@@ -118,6 +146,10 @@
 		</dict>
 		<key>hat1.wav</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			AIW1X1v7HB/SqgxexqtNkoUeD6M=
+			</data>
 			<key>hash2</key>
 			<data>
 			1VbrrXzmKz+i8I5R8HLfSvU2Ws+EGcbvu1tic+aMqV0=
@@ -125,6 +157,10 @@
 		</dict>
 		<key>hat2.wav</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			PU9R99AqV+pYfSmUNogZMoCt6sc=
+			</data>
 			<key>hash2</key>
 			<data>
 			4DiNOPB/qWID4eTYjkvNDUpmNbXCFVOG7RmQeoazr4c=
@@ -132,6 +168,10 @@
 		</dict>
 		<key>hat3.wav</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			9BQXWvb7lHSBU1DowsEsa54rcjs=
+			</data>
 			<key>hash2</key>
 			<data>
 			/40BNIiXXc8OoPFE7fm/GYcO/1UQFi1Zvprgid7Lk94=
@@ -139,6 +179,10 @@
 		</dict>
 		<key>kick1.wav</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			3xU4K9t3/lJt1+IJ9y2s79y+U0k=
+			</data>
 			<key>hash2</key>
 			<data>
 			iqHBwRIyTgmONRTdOQFHEArFXT+811K1K0PcFQxSwaQ=
@@ -146,6 +190,10 @@
 		</dict>
 		<key>kick2.wav</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			ogHNRcbIsJOfUkN9gAJ+hL5TkNM=
+			</data>
 			<key>hash2</key>
 			<data>
 			LZ1gy7n+uzaXZeO4J1dbSzW+ahD2uXwAOqKc+00XjKE=
@@ -153,6 +201,10 @@
 		</dict>
 		<key>sn1.wav</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			+U3lNZTkLdipZakiehCkqTSa1mc=
+			</data>
 			<key>hash2</key>
 			<data>
 			xN29S2KqYqIxVN5dTSxtpWSf7aUWpspdzCFeYuSNP7Q=

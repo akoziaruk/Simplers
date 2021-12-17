@@ -12,15 +12,30 @@
 
 #include <JuceHeader.h>
 #include "SequencerEngine.hpp"
+#include "SequencerButton.h"
 
 using namespace juce;
 
-class SequencerComponent  : public Component
+class SequencerComponent  : public AnimatedAppComponent,
+                            public Button::Listener
 {
 public:
     
     SequencerComponent(SequencerEngine&);
- 
+    void resized() override;
+    void paint (juce::Graphics& g) override;
+    void buttonClicked (Button* button) override;
+    void update() override;
+    
 private:
     
+    SequencerEngine& engine;
+    Array<SequencerButton*> buttons;
+
+    Component positionSlider;
+    
+    int margin = 8;
+    int padding = 2;
+    int buttonSide = 0;
+    int buttonStartX = 0;
 };

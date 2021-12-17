@@ -20,16 +20,16 @@ SequencerEngine::SequencerEngine(int sequencerSize)
         sequence.add(new Array<int>());
     }
     
-    add(0, 0);
-    add(5, 0);
-    add(0, 1);
-    add(4, 2);
-    add(0, 4);
-    add(4, 6);
-    add(0, 8);
-    add(4, 10);
-    add(0, 12);
-    add(6, 14);
+//    add(0, 0);
+//    add(5, 0);
+//    add(0, 1);
+//    add(4, 2);
+//    add(0, 4);
+//    add(4, 6);
+//    add(0, 8);
+//    add(4, 10);
+//    add(0, 12);
+//    add(6, 14);
     
 //    remove(0, 0);
 }
@@ -43,17 +43,20 @@ SequencerEngine::~SequencerEngine() {
     }
 }
 
-void SequencerEngine::add(int sampleIndex, int position)
-{
-    Array<int>* arr = sequence[position];
-    arr->add(sampleIndex);
-}
-
-void SequencerEngine::remove(int sampleIndex, int position)
+bool SequencerEngine::toggle(int sampleIndex, int position)
 {
     Array<int>* arr = sequence[position];
     int index = arr->indexOf(sampleIndex);
-    arr->remove(index);
+    if (index == -1)
+    {
+        arr->add(sampleIndex);
+        return true;
+    }
+    else
+    {
+        arr->remove(index);
+        return false;
+    }
 }
 
 void SequencerEngine::getNextEvents(MidiKeyboardState &state, int startSample, int numSamples)
@@ -63,7 +66,7 @@ void SequencerEngine::getNextEvents(MidiKeyboardState &state, int startSample, i
     
     if ((samplesRemining + numSamples) >= updateInterval)
     {
-        DBG(position);
+//        DBG(position);
 
         Array<int>& array = *sequence[position];
    

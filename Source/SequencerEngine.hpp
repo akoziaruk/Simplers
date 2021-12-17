@@ -31,11 +31,11 @@ public:
     
     void hiResTimerCallback() override;
     
+    bool toggle(int sampleIndex, int position);
+    int getPosition() { return position; };
+    
 private:
     //==============================================================================
-    void add(int sampleIndex, int position);
-    void remove(int sampleIndex, int position);
-
     Array<Array<int>*> sequence;
 
     int position = 0;

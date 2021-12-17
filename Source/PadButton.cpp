@@ -7,10 +7,7 @@
 
 #include "PadButton.hpp"
 
-PadButton::PadButton() : Button("")
-{
-    
-}
+PadButton::PadButton() : Button(""){ }
 
 PadButton::~PadButton(){}
 

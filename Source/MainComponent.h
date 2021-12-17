@@ -13,7 +13,8 @@ using namespace juce;
     This component lives inside our window, and this is where you should put all
     your controls and content.
 */
-class MainComponent  : public Component
+class MainComponent  : public Component,
+                       public Button::Listener
 {
 public:
     //==============================================================================
@@ -21,8 +22,9 @@ public:
     ~MainComponent() override;
 
     //==============================================================================
-    void paint (juce::Graphics& g) override;
+    void paint(juce::Graphics& g) override;
     void resized() override;
+    void buttonClicked(Button*) override;
 
 private:
     //==============================================================================
@@ -32,7 +34,11 @@ private:
     
     PadBoardComponent   padComponent        { audioEngine.midiState };
     ControlsComponent   controlsComponent   { audioEngine.audioEffectsState };
+    
     SequencerComponent  sequencerComponent  { audioEngine.midiSequencer };
+    
+    TextButton padButton { "" };
+    TextButton sequencerButton { "" };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
