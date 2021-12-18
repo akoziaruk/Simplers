@@ -22,6 +22,7 @@ class SequencerComponent  : public AnimatedAppComponent,
 public:
     
     SequencerComponent(SequencerEngine&);
+    ~SequencerComponent();
     void resized() override;
     void paint (juce::Graphics& g) override;
     void buttonClicked (Button* button) override;
@@ -29,10 +30,13 @@ public:
     
 private:
     
+    void updatePlayStopButton();
+    
     SequencerEngine& engine;
     Array<SequencerButton*> buttons;
 
     Component positionSlider;
+    TextButton playStopButton;
     
     int margin = 8;
     int padding = 2;

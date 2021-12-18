@@ -32,12 +32,17 @@ public:
     void hiResTimerCallback() override;
     
     bool toggle(int sampleIndex, int position);
-    int getPosition() { return position; };
+    
+    int getPosition() { return position; }
+    
+    bool isPlaying()  { return _isPlaying; }
+    void togglePlay();
     
 private:
     //==============================================================================
     Array<Array<int>*> sequence;
 
+    bool _isPlaying = false;
     int position = 0;
     int totalSamples = 0;
     int samplesRemining = 0;

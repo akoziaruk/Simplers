@@ -16,7 +16,12 @@ SequencerComponent::SequencerComponent(SequencerEngine& s): engine(s)
     
     addAndMakeVisible(positionSlider);
     
-    // add buttons
+    //setup Play/Stop button
+    addAndMakeVisible(playStopButton);
+    playStopButton.addListener(this);
+    updatePlayStopButton();
+    
+    // add Sequencer buttons
     for (int i = 0; i < 9*16; i++)
     {
         SequencerButton* button = new SequencerButton();
@@ -28,19 +33,36 @@ SequencerComponent::SequencerComponent(SequencerEngine& s): engine(s)
     }
 }
 
+SequencerComponent::~SequencerComponent()
+{
+    playStopButton.removeListener(this);
+    
+    for (int i = 0; i < buttons.size(); i++)
+        buttons[i]->removeListener(this);
+}
 
 void SequencerComponent::buttonClicked(Button* button)
 {
-    int index = button->getComponentID().getIntValue();
-    int position = index % 16;
-    int sampleIndex = floor(index / 16);
-    
-    bool state = engine.toggle(sampleIndex, position);
-    button->setToggleState(state, NotificationType::dontSendNotification);
+    if (button == &playStopButton)
+    {
+        engine.togglePlay();
+        updatePlayStopButton();
+    }
+    else
+    {
+        int index = button->getComponentID().getIntValue();
+        int position = index % 16;
+        int sampleIndex = floor(index / 16);
+        
+        bool state = engine.toggle(sampleIndex, position);
+        button->setToggleState(state, NotificationType::dontSendNotification);
+    }
 }
 
 void SequencerComponent::resized()
 {
+    playStopButton.setBounds(10, 10, 50, 30);
+    
     // resize buttons
     buttonSide = (getHeight()-margin*2)/9-padding;
     buttonStartX = (getWidth()-16*(buttonSide+padding))/2;
@@ -69,6 +91,11 @@ void SequencerComponent::paint (juce::Graphics& g)
          
     int x = buttonStartX + (buttonSide + padding) * engine.getPosition();
     g.fillRect(x, getHeight()-8, buttonSide, 6);
+}
+
+void SequencerComponent::updatePlayStopButton()
+{
+    playStopButton.setButtonText(engine.isPlaying() ? "Stop" : "Play");
 }
 
 void SequencerComponent::update()

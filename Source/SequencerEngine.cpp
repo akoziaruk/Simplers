@@ -12,8 +12,6 @@
 
 SequencerEngine::SequencerEngine(int sequencerSize)
 {
-    HighResolutionTimer::startTimer(60);
-    
     // setup sequencer with provided size
     for (int i = 0; i < sequencerSize; i++)
     {
@@ -61,6 +59,8 @@ bool SequencerEngine::toggle(int sampleIndex, int position)
 
 void SequencerEngine::getNextEvents(MidiKeyboardState &state, int startSample, int numSamples)
 {
+    if (!_isPlaying) { return; }
+    
     totalSamples += numSamples;
     samplesRemining = totalSamples % updateInterval;
     
@@ -90,9 +90,19 @@ void SequencerEngine::reset()
 {
     HighResolutionTimer::stopTimer();
     totalSamples = 0;
+    position = 0;
 }
 
 void SequencerEngine::hiResTimerCallback()
 {
     updateInterval = 60.0 / bpm * sampleRate / kicksPerBit;
 }
+
+void SequencerEngine::togglePlay()
+{
+    _isPlaying = !_isPlaying;
+    
+    if (!_isPlaying)
+        reset();
+}
+
