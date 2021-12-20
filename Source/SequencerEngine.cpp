@@ -10,26 +10,13 @@
 
 #include "SequencerEngine.hpp"
 
-SequencerEngine::SequencerEngine(int sequencerSize)
+SequencerEngine::SequencerEngine(int sequencerSize, int g, int b): grid(b), bpm(g)
 {
     // setup sequencer with provided size
     for (int i = 0; i < sequencerSize; i++)
     {
         sequence.add(new Array<int>());
     }
-    
-//    add(0, 0);
-//    add(5, 0);
-//    add(0, 1);
-//    add(4, 2);
-//    add(0, 4);
-//    add(4, 6);
-//    add(0, 8);
-//    add(4, 10);
-//    add(0, 12);
-//    add(6, 14);
-    
-//    remove(0, 0);
 }
 
 SequencerEngine::~SequencerEngine() {
@@ -66,8 +53,6 @@ void SequencerEngine::getNextEvents(MidiKeyboardState &state, int startSample, i
     
     if ((samplesRemining + numSamples) >= updateInterval)
     {
-//        DBG(position);
-
         Array<int>& array = *sequence[position];
    
         for (int i = 0; i < array.size(); i++)
@@ -83,7 +68,7 @@ void SequencerEngine::getNextEvents(MidiKeyboardState &state, int startSample, i
 void SequencerEngine::prepareToPlay(double s)
 {
     sampleRate = s;
-    updateInterval = 60.0 / bpm * sampleRate / kicksPerBit;
+    prepareUpdateInterval();
 }
 
 void SequencerEngine::reset()
@@ -95,7 +80,7 @@ void SequencerEngine::reset()
 
 void SequencerEngine::hiResTimerCallback()
 {
-    updateInterval = 60.0 / bpm * sampleRate / kicksPerBit;
+    prepareUpdateInterval();
 }
 
 void SequencerEngine::togglePlay()
@@ -104,5 +89,13 @@ void SequencerEngine::togglePlay()
     
     if (!_isPlaying)
         reset();
+    else
+        HighResolutionTimer::startTimer(60);
 }
+
+void SequencerEngine::prepareUpdateInterval()
+{
+    updateInterval = 60.0 / bpm * sampleRate / grid;
+}
+
 

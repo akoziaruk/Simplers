@@ -30,7 +30,7 @@ public:
     void setParameters(Parameters parameters);
 
     //==============================================================================
-    SequencerEngine midiSequencer { 16 };
+    SequencerEngine midiSequencer { 16, 4, 120 };
     MidiKeyboardState midiState;
     AudioEffectsState audioEffectsState;
 
