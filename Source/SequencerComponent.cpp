@@ -10,9 +10,9 @@
 
 #include "SequencerComponent.hpp"
 
-SequencerComponent::SequencerComponent(SequencerEngine& e): engine(e),
-                                                            numberOfRows(e.getNumberOfSounds()),
-                                                            numberOfItems(e.getLength())
+SequencerComponent::SequencerComponent(SequencerEngine& e, int rows, int items): engine(e),
+                                                                                 numberOfRows(rows),
+                                                                                 numberOfItems(items)
 {
     setFramesPerSecond (60);
     

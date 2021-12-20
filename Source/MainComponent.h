@@ -36,7 +36,9 @@ private:
     PadBoardComponent   padComponent        { audioEngine.midiState };
     ControlsComponent   controlsComponent   { audioEngine.audioEffectsState };
     
-    SequencerComponent  sequencerComponent  { audioEngine.midiSequencer };
+    SequencerComponent  sequencerComponent  { audioEngine.midiSequencer,
+                                              audioEngine.getNumberOfSounds(),
+                                              audioEngine.midiSequencer.getLength() };
     
     TextButton padButton { "" };
     TextButton sequencerButton { "" };

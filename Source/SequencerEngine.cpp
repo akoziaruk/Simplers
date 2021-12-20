@@ -12,8 +12,7 @@
 
 SequencerEngine::SequencerEngine(int _bpm): bpm(_bpm)
 {
-    // setup sequencer with provided size
-    for (int i = 0; i < Size::length; i++)
+    for (int i = 0; i < length; i++)
     {
         sequence.add(new Array<int>());
     }

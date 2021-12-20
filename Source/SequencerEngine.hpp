@@ -38,8 +38,7 @@ public:
     bool isPlaying()  { return _isPlaying; }
     void togglePlay();
     
-    int getNumberOfSounds() { return Size::soundsNumber; }
-    int getLength()         { return Size::length; }
+    int getLength()         { return length; }
     
 private:
     //==============================================================================
@@ -60,11 +59,7 @@ private:
     double sampleRate = 0;
     
     int grid = 4;
+    int length = 16;
     
     //==============================================================================
-
-    enum Size {
-        soundsNumber = 9,
-        length = 16
-    };
 };

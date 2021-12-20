@@ -21,7 +21,7 @@ class SequencerComponent  : public AnimatedAppComponent,
 {
 public:
     
-    SequencerComponent(SequencerEngine&);
+    SequencerComponent(SequencerEngine&, int rows, int items);
     ~SequencerComponent();
     void resized() override;
     void paint (juce::Graphics& g) override;

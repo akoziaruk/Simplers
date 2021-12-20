@@ -28,6 +28,7 @@ public:
     void releaseResources() override;
     void handleValueChanged(AudioEffectsState* source, Parameters parameters) override;
     void setParameters(Parameters parameters);
+    int getNumberOfSounds() { return sampler.getNumSounds(); }
 
     //==============================================================================
     SequencerEngine midiSequencer { 120 };
