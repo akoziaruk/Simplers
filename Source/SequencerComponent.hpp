@@ -35,8 +35,8 @@ private:
     SequencerEngine& engine;
     Array<SequencerButton*> buttons;
 
-    Component positionSlider;
     TextButton playStopButton;
+    Label bpmLabel;
     
     int numberOfRows;
     int numberOfItems;

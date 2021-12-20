@@ -14,9 +14,17 @@ SequencerComponent::SequencerComponent(SequencerEngine& e, int rows, int items):
                                                                                  numberOfRows(rows),
                                                                                  numberOfItems(items)
 {
-    setFramesPerSecond (60);
+    setFramesPerSecond(60);
     
-    addAndMakeVisible(positionSlider);
+    // setup BMP label
+    bpmLabel.setEditable(true);
+    bpmLabel.setText(String(engine.getBMP()), juce::dontSendNotification);
+    bpmLabel.onTextChange = [this] { engine.setBMP(bpmLabel.getText().getIntValue()); };
+    bpmLabel.setJustificationType(Justification::centred);
+    bpmLabel.setColour (juce::Label::backgroundColourId, juce::Colours::darkgrey);
+    bpmLabel.setColour (juce::Label::textColourId, juce::Colours::white);
+    bpmLabel.setKeyboardType(TextInputTarget::VirtualKeyboardType::numericKeyboard);
+    addAndMakeVisible(bpmLabel);
     
     //setup Play/Stop button
     addAndMakeVisible(playStopButton);
@@ -64,7 +72,8 @@ void SequencerComponent::buttonClicked(Button* button)
 void SequencerComponent::resized()
 {
     playStopButton.setBounds(10, 10, 50, 30);
-    
+    bpmLabel.setBounds(10, 50, 50, 30);
+
     // resize buttons
     buttonSide = (getHeight()-margin*2)/numberOfRows-padding;
     buttonStartX = (getWidth()-numberOfItems*(buttonSide+padding))/2;

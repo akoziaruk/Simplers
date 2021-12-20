@@ -32,14 +32,15 @@ public:
     void hiResTimerCallback() override;
     
     bool toggle(int sampleIndex, int position);
-    
-    int getPosition() { return position; }
-    
-    bool isPlaying()  { return _isPlaying; }
     void togglePlay();
     
+    bool isPlaying()        { return _isPlaying; }
+    int getPosition()       { return position; }
     int getLength()         { return length; }
     
+    int getBMP()            { return bpm; }
+    void setBMP(int bpm)    { this->bpm = bpm; }
+
 private:
     //==============================================================================
     void prepareUpdateInterval();
