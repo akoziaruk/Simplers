@@ -10,10 +10,10 @@
 
 #include "SequencerEngine.hpp"
 
-SequencerEngine::SequencerEngine(int sequencerSize, int g, int b): grid(b), bpm(g)
+SequencerEngine::SequencerEngine(int _bpm): bpm(_bpm)
 {
     // setup sequencer with provided size
-    for (int i = 0; i < sequencerSize; i++)
+    for (int i = 0; i < Size::length; i++)
     {
         sequence.add(new Array<int>());
     }

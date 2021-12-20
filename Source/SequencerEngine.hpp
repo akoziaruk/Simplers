@@ -21,7 +21,7 @@ class SequencerEngine: public HighResolutionTimer
 {
 public:
     //==============================================================================
-    SequencerEngine(int sequencerSize, int grid, int bpm);
+    SequencerEngine(int bpm);
     ~SequencerEngine();
     
     void getNextEvents(MidiKeyboardState& state, int startSample, int numSamples);
@@ -38,14 +38,17 @@ public:
     bool isPlaying()  { return _isPlaying; }
     void togglePlay();
     
+    int getNumberOfSounds() { return Size::soundsNumber; }
+    int getLength()         { return Size::length; }
+    
 private:
     //==============================================================================
     void prepareUpdateInterval();
     
     //==============================================================================
+
     Array<Array<int>*> sequence;
     
-    int grid;
     int bpm;
     
     bool _isPlaying = false;
@@ -55,4 +58,13 @@ private:
     int samplesRemining = 0;
     int updateInterval = 0;
     double sampleRate = 0;
+    
+    int grid = 4;
+    
+    //==============================================================================
+
+    enum Size {
+        soundsNumber = 9,
+        length = 16
+    };
 };

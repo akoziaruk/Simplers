@@ -38,6 +38,9 @@ private:
     Component positionSlider;
     TextButton playStopButton;
     
+    int numberOfRows;
+    int numberOfItems;
+    
     int margin = 8;
     int padding = 2;
     int buttonSide = 0;

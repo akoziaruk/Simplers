@@ -10,7 +10,9 @@
 
 #include "SequencerComponent.hpp"
 
-SequencerComponent::SequencerComponent(SequencerEngine& s): engine(s)
+SequencerComponent::SequencerComponent(SequencerEngine& e): engine(e),
+                                                            numberOfRows(e.getNumberOfSounds()),
+                                                            numberOfItems(e.getLength())
 {
     setFramesPerSecond (60);
     
@@ -22,7 +24,7 @@ SequencerComponent::SequencerComponent(SequencerEngine& s): engine(s)
     updatePlayStopButton();
     
     // add Sequencer buttons
-    for (int i = 0; i < 9*16; i++)
+    for (int i = 0; i < numberOfRows*numberOfItems; i++)
     {
         SequencerButton* button = new SequencerButton();
         button->setComponentID(String(i));
@@ -51,8 +53,8 @@ void SequencerComponent::buttonClicked(Button* button)
     else
     {
         int index = button->getComponentID().getIntValue();
-        int position = index % 16;
-        int sampleIndex = floor(index / 16);
+        int position = index % numberOfItems;
+        int sampleIndex = floor(index / numberOfItems);
         
         bool state = engine.toggle(sampleIndex, position);
         button->setToggleState(state, NotificationType::dontSendNotification);
@@ -64,14 +66,14 @@ void SequencerComponent::resized()
     playStopButton.setBounds(10, 10, 50, 30);
     
     // resize buttons
-    buttonSide = (getHeight()-margin*2)/9-padding;
-    buttonStartX = (getWidth()-16*(buttonSide+padding))/2;
+    buttonSide = (getHeight()-margin*2)/numberOfRows-padding;
+    buttonStartX = (getWidth()-numberOfItems*(buttonSide+padding))/2;
     
     int index = 0;
     
-    for (int i = 0; i < 9; i++)
+    for (int i = 0; i < numberOfRows; i++)
     {
-        for (int j = 0; j < 16; j++)
+        for (int j = 0; j < numberOfItems; j++)
         {
             float x = buttonStartX+j*(buttonSide+padding);
             float y = margin+i*(buttonSide+padding);

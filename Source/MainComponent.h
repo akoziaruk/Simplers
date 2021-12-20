@@ -28,6 +28,7 @@ public:
 
 private:
     //==============================================================================
+
     AudioDeviceManager audioDeviceManager;
     AudioSourcePlayer audioSourcePlayer;
     AudioEngine audioEngine;

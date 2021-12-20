@@ -16,7 +16,7 @@ using namespace juce;
 using namespace dsp;
 
 struct AudioEngine : public AudioSource,
-                            public AudioEffectsStateListener
+                     public AudioEffectsStateListener
 {
 public:
     //==============================================================================
@@ -30,7 +30,7 @@ public:
     void setParameters(Parameters parameters);
 
     //==============================================================================
-    SequencerEngine midiSequencer { 16, 4, 120 };
+    SequencerEngine midiSequencer { 120 };
     MidiKeyboardState midiState;
     AudioEffectsState audioEffectsState;
 
@@ -43,7 +43,7 @@ private:
 
     //==============================================================================
     Synthesiser sampler; // TODO: change to custom Sampler class
-
+    
     enum
     {
         reverbIndex,
