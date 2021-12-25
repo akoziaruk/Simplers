@@ -1,5 +1,6 @@
 
 Builds/iOS/Simplers.xcodeproj/project.xcworkspace/xcuserdata/alex.xcuserdatad/UserInterfaceState.xcuserstate
 Builds/iOS/build/*
-*.xcuserstate/*
-Builds/iOS/Simplers.xcodeproj/project.xcworkspace/xcuserdata/alex.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
