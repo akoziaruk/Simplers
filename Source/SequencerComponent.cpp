@@ -34,13 +34,21 @@ SequencerComponent::SequencerComponent(SequencerEngine& e, int rows, int items):
     // add Sequencer buttons
     for (int i = 0; i < numberOfRows*numberOfItems; i++)
     {
-        SequencerButton* button = new SequencerButton();
+        SequencerButton* button = new SequencerButton(selectedColour,
+                                                      colorForDeselectedItem(i));
         button->setComponentID(String(i));
         button->addListener(this);
         addAndMakeVisible(button);
         
         buttons.add(button);
     }
+}
+
+Colour SequencerComponent::colorForDeselectedItem(int index)
+{
+    int k = index%8;
+    bool first = k==0||k==1||k==2||k==3;
+    return first ? deselectedColour1 : deselectedColour2;;
 }
 
 SequencerComponent::~SequencerComponent()

@@ -31,6 +31,7 @@ public:
 private:
     
     void updatePlayStopButton();
+    Colour colorForDeselectedItem(int index);
     
     SequencerEngine& engine;
     Array<SequencerButton*> buttons;
@@ -45,4 +46,8 @@ private:
     int padding = 2;
     int buttonSide = 0;
     int buttonStartX = 0;
+    
+    Colour selectedColour = Colour(73, 109, 219);
+    Colour deselectedColour1 = Colour(113, 126, 195);
+    Colour deselectedColour2 = Colour(108, 118, 188);
 };

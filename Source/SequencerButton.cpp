@@ -10,13 +10,18 @@
 
 #include "SequencerButton.h"
 
-SequencerButton::SequencerButton() : Button(""){ }
+SequencerButton::SequencerButton(Colour s, Colour d): Button(""), selectedColor(s), deselectedColor(d)
+{
+    
+}
+
+
 SequencerButton::~SequencerButton() {}
 
 void SequencerButton::paintButton (Graphics& g, bool, bool) {
     auto cornerSize = 6.0f;
 
-    Colour buttonColour = getToggleState() ? Colour (73, 109, 219) : Colour (113, 126, 195);
+    Colour buttonColour = getToggleState() ? selectedColor: deselectedColor;
     auto bounds = getLocalBounds().toFloat().reduced (0.5f, 0.5f);
     g.setColour (buttonColour);
     g.fillRoundedRectangle (bounds, cornerSize);

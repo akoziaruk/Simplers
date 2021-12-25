@@ -18,7 +18,7 @@ class SequencerButton  : public Button
 {
 public:
     //==============================================================================
-    SequencerButton();
+    SequencerButton(Colour selected, Colour deselected);
     ~SequencerButton() override;
 
     //==============================================================================
@@ -26,6 +26,9 @@ public:
     void colourChanged() override;
     void buttonStateChanged() override;
 private:
+    
+    Colour selectedColor;
+    Colour deselectedColor;
     
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SequencerButton)
