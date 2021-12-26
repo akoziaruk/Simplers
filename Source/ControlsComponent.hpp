@@ -32,12 +32,12 @@ private:
     void updateParameters(Parameters::Distortion* distortion, int index, float value);
 
     //==============================================================================
-    AudioEffectsState& state;
+    AudioEffectsState& m_State;
     
-    ControlsRowComponent reverbControls { "Reverb" };
+    ControlsRowComponent m_ReverbControls { "Reverb" };
     enum Reverb: uint { dry, wet, room, damping, width, freeze };
     
-    ControlsRowComponent distortionControls { "Distortion" };
+    ControlsRowComponent m_DistortionControls { "Distortion" };
     enum Distortion: uint { preGain, postGain };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ControlsComponent)

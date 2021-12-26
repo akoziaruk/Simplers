@@ -10,18 +10,17 @@
 
 #include "SequencerButton.h"
 
-SequencerButton::SequencerButton(Colour s, Colour d): Button(""), selectedColor(s), deselectedColor(d)
+SequencerButton::SequencerButton(Colour s, Colour d): Button(""), m_SelectedColor(s), m_DeselectedColor(d)
 {
     
 }
-
 
 SequencerButton::~SequencerButton() {}
 
 void SequencerButton::paintButton (Graphics& g, bool, bool) {
     auto cornerSize = 6.0f;
 
-    Colour buttonColour = getToggleState() ? selectedColor: deselectedColor;
+    Colour buttonColour = getToggleState() ? m_SelectedColor: m_DeselectedColor;
     auto bounds = getLocalBounds().toFloat().reduced (0.5f, 0.5f);
     g.setColour (buttonColour);
     g.fillRoundedRectangle (bounds, cornerSize);
@@ -32,11 +31,6 @@ void SequencerButton::paintButton (Graphics& g, bool, bool) {
 
 void SequencerButton::buttonStateChanged()
 {
-//    ButtonState state = getState();
-//    if (state == ButtonState::buttonDown)
-//        setToggleState (true, NotificationType::dontSendNotification);
-//    else if (state == ButtonState::buttonNormal)
-//        setToggleState (false, NotificationType::dontSendNotification);
 }
 
 void SequencerButton::colourChanged() {

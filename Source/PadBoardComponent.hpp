@@ -27,11 +27,8 @@ private:
     void updatePad(int index, bool isDown);
     
     //==============================================================================
-    MidiKeyboardState& state;
-    Array<PadButton*> pads;
-    
-    int midiChannel = 1;
-    int velocity = 1;
+    MidiKeyboardState& m_State;
+    Array<PadButton*> m_Pads;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PadBoardComponent)
 };

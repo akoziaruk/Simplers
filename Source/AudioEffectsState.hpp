@@ -28,8 +28,8 @@ public:
     void setListener(Listener* l)        { listener = l; };
     void removeListener (Listener* l)    { listener = NULL; };
     
-    Parameters getParameters() { return parameters; };
-    void setParameters(Parameters p) { parameters = p; listener->handleValueChanged(this, parameters); };
+    Parameters getParameters()           { return parameters; };
+    void setParameters(Parameters p)     { parameters = p; listener->handleValueChanged(this, parameters); };
     
 private:
 

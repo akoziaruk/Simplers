@@ -10,37 +10,37 @@
 
 #include "ControlsComponent.hpp"
 
-ControlsComponent::ControlsComponent(AudioEffectsState& s): state(s)
+ControlsComponent::ControlsComponent(AudioEffectsState& s): m_State(s)
 {
-    auto parameters = state.getParameters();
+    auto parameters = m_State.getParameters();
     
-    reverbControls.setSlidersData(Array<SliderData>(SliderData("Dry",       parameters.reverb.dry),
+    m_ReverbControls.setSlidersData(Array<SliderData>(SliderData("Dry",       parameters.reverb.dry),
                                                     SliderData("Wet",       parameters.reverb.wet),
                                                     SliderData("Room",      parameters.reverb.room),
                                                     SliderData("Damping",   parameters.reverb.damping),
                                                     SliderData("Width",     parameters.reverb.width),
                                                     SliderData("Freeze",    parameters.reverb.freeze)));
     
-    reverbControls.setListener(this);
-    addAndMakeVisible(reverbControls);
+    m_ReverbControls.setListener(this);
+    addAndMakeVisible(m_ReverbControls);
     
-    distortionControls.setSlidersData(Array<SliderData>(SliderData("Pre Gain",    parameters.distortion.preGain),
+    m_DistortionControls.setSlidersData(Array<SliderData>(SliderData("Pre Gain",    parameters.distortion.preGain),
                                                         SliderData("Post Gain",   parameters.distortion.postGain)));
     
-    distortionControls.setListener(this);
-    addAndMakeVisible(distortionControls);
+    m_DistortionControls.setListener(this);
+    addAndMakeVisible(m_DistortionControls);
 }
 
 ControlsComponent::~ControlsComponent()
 {
-    reverbControls.removeListener(this);
-    distortionControls.removeListener(this);
+    m_ReverbControls.removeListener(this);
+    m_DistortionControls.removeListener(this);
 }
 
 void ControlsComponent::resized()
 {
-    reverbControls.setBounds(8, 8, getWidth() - 16, 100);
-    distortionControls.setBounds(8, 116, getWidth() - 16, 100);
+    m_ReverbControls.setBounds(8, 8, getWidth() - 16, 100);
+    m_DistortionControls.setBounds(8, 116, getWidth() - 16, 100);
 }
 
 void ControlsComponent::paint(Graphics &g)
@@ -57,18 +57,16 @@ void ControlsComponent::paint(Graphics &g)
 
 void ControlsComponent::handleValueChanged(ControlsRowComponent *source, int index, float value)
 {
-    auto parameters = state.getParameters();
+    auto parameters = m_State.getParameters();
 
-    if (source == &reverbControls)
-    {
+    if (source == &m_ReverbControls) {
         updateParameters(&parameters.reverb, index, value);
     }
-    else if (source == &distortionControls)
-    {
+    else if (source == &m_DistortionControls) {
         updateParameters(&parameters.distortion, index, value);
     }
     
-    state.setParameters(parameters);
+    m_State.setParameters(parameters);
 }
 
 void ControlsComponent::updateParameters(Parameters::Reverb *reverb, int index, float value)
@@ -96,4 +94,4 @@ void ControlsComponent::updateParameters(Parameters::Distortion *distortion, int
             distortion->preGain = value;      break;
         case postGain:
             distortion->postGain = value;     break;
-    }}
+}}

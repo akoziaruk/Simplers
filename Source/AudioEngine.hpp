@@ -28,12 +28,13 @@ public:
     void releaseResources() override;
     void handleValueChanged(AudioEffectsState* source, Parameters parameters) override;
     void setParameters(Parameters parameters);
-    int getNumberOfSounds() { return sampler.getNumSounds(); }
+    int getNumberOfSounds() { return m_Sampler.getNumSounds(); }
 
     //==============================================================================
     SequencerEngine midiSequencer { 120 };
     MidiKeyboardState midiState;
     AudioEffectsState audioEffectsState;
+
 
 private:
     //==============================================================================
@@ -43,7 +44,7 @@ private:
     void updateDistortion(Parameters::Distortion parameters);
 
     //==============================================================================
-    Synthesiser sampler; // TODO: change to custom Sampler class
+    Synthesiser m_Sampler;
     
     enum
     {

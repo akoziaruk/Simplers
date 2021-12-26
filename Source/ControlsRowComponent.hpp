@@ -54,12 +54,12 @@ private:
     void resizeLabel(Label* slider);
     
     //==============================================================================
-    Listener* listener;
+    Listener* m_Listener;
 
-    Label titleLabel;
+    Label m_TitleLabel;
 
-    Array<Slider*> sliders;
-    Array<Label*> labels;
+    Array<Slider*> m_Sliders;
+    Array<Label*> m_Labels;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ControlsRowComponent)
 };

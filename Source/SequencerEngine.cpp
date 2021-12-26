@@ -10,17 +10,15 @@
 
 #include "SequencerEngine.hpp"
 
-SequencerEngine::SequencerEngine(int _bpm): bpm(_bpm)
+SequencerEngine::SequencerEngine(int _bpm): m_BPM(_bpm)
 {
-    for (int i = 0; i < length; i++)
-    {
+    for (int i = 0; i < m_TotalLength; i++) {
         sequence.add(new Array<int>());
     }
 }
 
 SequencerEngine::~SequencerEngine() {
-    for (int i = sequence.size(); i > 0; i--)
-    {
+    for (int i = sequence.size(); i > 0; i--) {
         Array<int>* array = sequence[i];
         sequence.remove(i);
         delete array;
@@ -31,13 +29,10 @@ bool SequencerEngine::toggle(int sampleIndex, int position)
 {
     Array<int>* arr = sequence[position];
     int index = arr->indexOf(sampleIndex);
-    if (index == -1)
-    {
+    if (index == -1) {
         arr->add(sampleIndex);
         return true;
-    }
-    else
-    {
+    } else {
         arr->remove(index);
         return false;
     }
@@ -45,36 +40,34 @@ bool SequencerEngine::toggle(int sampleIndex, int position)
 
 void SequencerEngine::getNextEvents(MidiKeyboardState &state, int startSample, int numSamples)
 {
-    if (!_isPlaying) { return; }
+    if (!m_IsPlaying) { return; }
     
-    totalSamples += numSamples;
-    samplesRemining = totalSamples % updateInterval;
+    m_TotalSamples += numSamples;
+    m_SamplesRemining = m_TotalSamples % m_UpdateInterval;
     
-    if ((samplesRemining + numSamples) >= updateInterval)
-    {
-        Array<int>& array = *sequence[position];
+    if ((m_SamplesRemining + numSamples) >= m_UpdateInterval) {
+        Array<int>& array = *sequence[m_Position];
    
-        for (int i = 0; i < array.size(); i++)
-        {
+        for (int i = 0; i < array.size(); i++) {
             int sound = array[i];
             state.noteOn (1, sound, 1);
         }
 
-        position = (position == sequence.size() -1 ) ? 0 : position + 1;
+        m_Position = (m_Position == sequence.size() -1 ) ? 0 : m_Position + 1;
     }
 }
     
 void SequencerEngine::prepareToPlay(double s)
 {
-    sampleRate = s;
+    m_SampleRate = s;
     prepareUpdateInterval();
 }
 
 void SequencerEngine::reset()
 {
     HighResolutionTimer::stopTimer();
-    totalSamples = 0;
-    position = 0;
+    m_TotalSamples = 0;
+    m_Position = 0;
 }
 
 void SequencerEngine::hiResTimerCallback()
@@ -84,9 +77,9 @@ void SequencerEngine::hiResTimerCallback()
 
 void SequencerEngine::togglePlay()
 {
-    _isPlaying = !_isPlaying;
+    m_IsPlaying = !m_IsPlaying;
     
-    if (!_isPlaying)
+    if (!m_IsPlaying)
         reset();
     else
         HighResolutionTimer::startTimer(60);
@@ -94,7 +87,7 @@ void SequencerEngine::togglePlay()
 
 void SequencerEngine::prepareUpdateInterval()
 {
-    updateInterval = 60.0 / bpm * sampleRate / grid;
+    m_UpdateInterval = 60.0 / m_BPM * m_SampleRate / m_GridSize;
 }
 
 

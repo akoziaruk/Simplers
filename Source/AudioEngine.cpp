@@ -46,13 +46,13 @@ void AudioEngine::addSound(String name, int note)
     allNotes.setRange (note, note+1, true);
     
     // setup synth
-    sampler.addVoice (new SamplerVoice());
-    sampler.addSound (new SamplerSound (name, *audioReader, allNotes, note, 0, 0.5, 10.0));
+    m_Sampler.addVoice (new SamplerVoice());
+    m_Sampler.addSound (new SamplerSound (name, *audioReader, allNotes, note, 0, 0.5, 10.0));
 }
     
 void AudioEngine::prepareToPlay (int samplesPerBlockExpected, double sampleRate)
 {
-    sampler.setCurrentPlaybackSampleRate (sampleRate);
+    m_Sampler.setCurrentPlaybackSampleRate (sampleRate);
     midiSequencer.prepareToPlay(sampleRate);
     fxChain.prepare ({ sampleRate, (juce::uint32) samplesPerBlockExpected, 2 });
 }
@@ -66,7 +66,7 @@ void AudioEngine::getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill)
     MidiBuffer incomingMidi;
     midiState.processNextMidiBuffer (incomingMidi, 0, bufferToFill.numSamples, true);
     
-    sampler.renderNextBlock (*bufferToFill.buffer, incomingMidi, 0, bufferToFill.numSamples);
+    m_Sampler.renderNextBlock (*bufferToFill.buffer, incomingMidi, 0, bufferToFill.numSamples);
     
     auto block = AudioBlock<float> (*bufferToFill.buffer).getSubBlock ((size_t) bufferToFill.startSample, (size_t) bufferToFill.numSamples);
     auto context = ProcessContextReplacing<float> (block);

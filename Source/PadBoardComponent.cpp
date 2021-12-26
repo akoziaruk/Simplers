@@ -7,25 +7,27 @@
 
 #include "PadBoardComponent.hpp"
 
-PadBoardComponent::PadBoardComponent(MidiKeyboardState& s): state(s)
+#define MIDI_CHANEL 1
+#define VELOCITY 1
+
+PadBoardComponent::PadBoardComponent(MidiKeyboardState& s): m_State(s)
 {
     // add pads
-    for (int i = 0; i < 3*3; i++)
-    {
+    for (int i = 0; i < 3*3; i++) {
         PadButton* pad = new PadButton();
         pad->setComponentID(String(i));
         pad->addListener(this);
-        pads.add(pad);
+        m_Pads.add(pad);
         addAndMakeVisible (pad);
     }
 }
 
 PadBoardComponent::~PadBoardComponent()
 {
-    for (int i = pads.size()-1; i > 0 ; i--) {
-        PadButton* button = pads[i];
+    for (int i = m_Pads.size()-1; i > 0 ; i--) {
+        PadButton* button = m_Pads[i];
         button->removeListener(this);
-        pads.remove(i);
+        m_Pads.remove(i);
         
         delete button;
     }
@@ -39,9 +41,9 @@ void PadBoardComponent::buttonStateChanged(Button* button)
     PadButton::ButtonState buttonState = button->getState();
 
     if (buttonState == PadButton::ButtonState::buttonDown)
-        state.noteOn (midiChannel, index, velocity);
+        m_State.noteOn (MIDI_CHANEL, index, VELOCITY);
     else if (buttonState == PadButton::ButtonState::buttonNormal)
-        state.noteOff (midiChannel, index, velocity);
+        m_State.noteOff (MIDI_CHANEL, index, VELOCITY);
 }
 
 void PadBoardComponent::resized()
@@ -51,12 +53,10 @@ void PadBoardComponent::resized()
     float side = (getHeight()-m)/3-m;
     int index = 0;
     
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
             float x = j*(side+m)+m; float y = i*(side+m)+m;
-            pads[index++]->setBounds (x,y,side,side);
+            m_Pads[index++]->setBounds (x,y,side,side);
         }
     }
 }

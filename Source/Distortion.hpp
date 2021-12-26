@@ -19,8 +19,7 @@ public:
     Distortion()
     {
         auto& waveshaper = processorChain.template get<waveshaperIndex>();
-        waveshaper.functionToUse = [] (Type x)
-        {
+        waveshaper.functionToUse = [] (Type x) {
             return std::tanh (x);
         };
     }

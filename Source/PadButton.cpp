@@ -7,9 +7,9 @@
 
 #include "PadButton.hpp"
 
-PadButton::PadButton() : Button(""){ }
+PadButton::PadButton() : Button("") {}
 
-PadButton::~PadButton(){}
+PadButton::~PadButton() {}
 
 void PadButton::paintButton (Graphics& g, bool, bool) {
     auto cornerSize = 6.0f;

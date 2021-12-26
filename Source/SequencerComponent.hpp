@@ -33,21 +33,14 @@ private:
     void updatePlayStopButton();
     Colour colorForDeselectedItem(int index);
     
-    SequencerEngine& engine;
-    Array<SequencerButton*> buttons;
+    SequencerEngine& m_Engine;
+    Array<SequencerButton*> m_Buttons;
 
-    TextButton playStopButton;
-    Label bpmLabel;
+    TextButton m_PlayStopButton;
+    Label m_BPMLabel;
     
-    int numberOfRows;
-    int numberOfItems;
-    
-    int margin = 8;
-    int padding = 2;
-    int buttonSide = 0;
-    int buttonStartX = 0;
-    
-    Colour selectedColour = Colour(73, 109, 219);
-    Colour deselectedColour1 = Colour(113, 126, 195);
-    Colour deselectedColour2 = Colour(108, 118, 188);
+    int m_NumberOfRows;
+    int m_NumberOfItems;
+    int m_ButtonSide;
+    int m_ButtonStartX;
 };

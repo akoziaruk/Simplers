@@ -14,9 +14,6 @@
 
 using namespace juce;
 
-// should store midi signal sequence, when what sound should play
-// write midi events to keyboard state
-
 class SequencerEngine: public HighResolutionTimer
 {
 public:
@@ -34,33 +31,34 @@ public:
     bool toggle(int sampleIndex, int position);
     void togglePlay();
     
-    bool isPlaying()        { return _isPlaying; }
-    int getPosition()       { return position; }
-    int getLength()         { return length; }
+    bool isPlaying()        { return m_IsPlaying; }
+    int getPosition()       { return m_Position; }
+    int getLength()         { return m_TotalLength; }
     
-    int getBMP()            { return bpm; }
-    void setBMP(int bpm)    { this->bpm = bpm; }
+    int getBMP()            { return m_BPM; }
+    void setBMP(int bpm)    { this->m_BPM = bpm; }
 
 private:
     //==============================================================================
     void prepareUpdateInterval();
     
     //==============================================================================
-
     Array<Array<int>*> sequence;
     
-    int bpm;
+    int m_BPM;
     
-    bool _isPlaying = false;
+    bool m_IsPlaying = false;
 
-    int position = 0;
-    int totalSamples = 0;
-    int samplesRemining = 0;
-    int updateInterval = 0;
-    double sampleRate = 0;
+    int m_Position = 0;
+    int m_TotalSamples = 0;
+    int m_SamplesRemining = 0;
+    int m_UpdateInterval = 0;
+    double m_SampleRate = 0;
     
-    int grid = 4;
-    int length = 16;
+    const int m_GridSize = 4;
+    const int m_TotalLength = 16;
     
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SequencerEngine)
+
     //==============================================================================
 };

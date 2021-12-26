@@ -12,10 +12,10 @@
 
 ControlsRowComponent::ControlsRowComponent(String title)
 {
-    addAndMakeVisible(titleLabel);
-    titleLabel.setText(title, juce::dontSendNotification);
-    titleLabel.setColour(Label::textColourId, Colours::black);
-    titleLabel.setFont(Font(17, Font::bold));
+    addAndMakeVisible(m_TitleLabel);
+    m_TitleLabel.setText(title, juce::dontSendNotification);
+    m_TitleLabel.setColour(Label::textColourId, Colours::black);
+    m_TitleLabel.setFont(Font(17, Font::bold));
 }
 
 void ControlsRowComponent::setSlidersData(Array<SliderData> items)
@@ -29,19 +29,19 @@ void ControlsRowComponent::setSlidersData(Array<SliderData> items)
 
 ControlsRowComponent::~ControlsRowComponent()
 {
-    for (int i = 0; i < sliders.size(); i++) {
-        sliders[i]->removeListener (this);
+    for (int i = 0; i < m_Sliders.size(); i++) {
+        m_Sliders[i]->removeListener (this);
     }
 }
 
 void ControlsRowComponent::setListener(Listener *l)
 {
-    listener = l;
+    m_Listener = l;
 }
 
 void ControlsRowComponent::removeListener(Listener *l)
 {
-    listener = NULL;
+    m_Listener = NULL;
 }
 
 void ControlsRowComponent::addSlider(float value)
@@ -53,7 +53,7 @@ void ControlsRowComponent::addSlider(float value)
     slider->setColour(Slider::textBoxTextColourId, Colours::black);
     slider->addListener(this);
     
-    sliders.add(slider);
+    m_Sliders.add(slider);
     
     addAndMakeVisible(slider);
 }
@@ -66,7 +66,7 @@ void ControlsRowComponent::addLabel(String title)
     label->setJustificationType(Justification(Justification::Flags::centred));
     addAndMakeVisible(label);
     
-    labels.add(label);
+    m_Labels.add(label);
 }
 
 void ControlsRowComponent::paint(Graphics &g)
@@ -83,21 +83,20 @@ void ControlsRowComponent::paint(Graphics &g)
 
 void ControlsRowComponent::resized()
 {
-    titleLabel.setBounds(8, 0, 100, 40);
+    m_TitleLabel.setBounds(8, 0, 100, 40);
     
     int labelWidth = 80;
-    int sliderSide = getWidth()/sliders.size();
+    int sliderSide = getWidth()/m_Sliders.size();
     int sliderWidth = jmin(labelWidth, sliderSide);
     
-    for (int i = 0; i < sliders.size(); i++)
-    {
-        sliders[i]->setBounds(i * sliderWidth, 26, sliderWidth, jmin(60, sliderSide));
-        labels[i]->setBounds((i * sliderWidth) + (sliderWidth - labelWidth)/2, 80, labelWidth, 18);
+    for (int i = 0; i < m_Sliders.size(); i++) {
+        m_Sliders[i]->setBounds(i * sliderWidth, 26, sliderWidth, jmin(60, sliderSide));
+        m_Labels[i]->setBounds((i * sliderWidth) + (sliderWidth - labelWidth)/2, 80, labelWidth, 18);
     }
 }
 
 void ControlsRowComponent::sliderValueChanged (juce::Slider* slider)
 {
-    int index = sliders.indexOf(slider);
-    listener->handleValueChanged(this, index, slider->getValue());
+    int index = m_Sliders.indexOf(slider);
+    m_Listener->handleValueChanged(this, index, slider->getValue());
 }
