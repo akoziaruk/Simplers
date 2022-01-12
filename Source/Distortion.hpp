@@ -37,6 +37,14 @@ public:
         auto& postGain = processorChain.template get<postGainIndex>();
         postGain.setGainDecibels (decibels);
     }
+    
+    void setEnabled(bool enabled)
+    {
+        processorChain.template setBypassed<filterIndex>    (!enabled);
+        processorChain.template setBypassed<preGainIndex>   (!enabled);
+        processorChain.template setBypassed<waveshaperIndex>(!enabled);
+        processorChain.template setBypassed<postGainIndex>  (!enabled);
+    }
 
     //==============================================================================
     void prepare (const juce::dsp::ProcessSpec& spec)
@@ -63,11 +71,11 @@ public:
         postGainIndex
     };
 
-    using Filter = juce::dsp::IIR::Filter<Type>;
-    using FilterCoefs = juce::dsp::IIR::Coefficients<Type>;
+    using Filter = IIR::Filter<Type>;
+    using FilterCoefs = IIR::Coefficients<Type>;
 
-    juce::dsp::ProcessorChain<juce::dsp::ProcessorDuplicator<Filter, FilterCoefs>,
-                              juce::dsp::Gain<Type>, juce::dsp::WaveShaper<Type>, juce::dsp::Gain<Type>> processorChain;
+    juce::dsp::ProcessorChain<ProcessorDuplicator<Filter, FilterCoefs>,
+                              Gain<Type>, WaveShaper<Type>, Gain<Type>> processorChain;
 
     void reset() noexcept {
         processorChain.reset();

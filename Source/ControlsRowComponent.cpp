@@ -12,10 +12,16 @@
 
 ControlsRowComponent::ControlsRowComponent(String title)
 {
-    addAndMakeVisible(m_TitleLabel);
     m_TitleLabel.setText(title, juce::dontSendNotification);
     m_TitleLabel.setColour(Label::textColourId, Colours::black);
     m_TitleLabel.setFont(Font(17, Font::bold));
+    addAndMakeVisible(m_TitleLabel);
+    
+    enableButton.setColour(ToggleButton::ColourIds::tickColourId, Colours::black);
+    enableButton.setColour(ToggleButton::ColourIds::tickDisabledColourId, Colours::black);
+    enableButton.onClick = [this] { m_Listener->setEnabled(this, enableButton.getToggleState()); };
+    
+    addAndMakeVisible(enableButton);
 }
 
 void ControlsRowComponent::setSlidersData(Array<SliderData> items)
@@ -84,6 +90,7 @@ void ControlsRowComponent::paint(Graphics &g)
 void ControlsRowComponent::resized()
 {
     m_TitleLabel.setBounds(8, 0, 100, 40);
+    enableButton.setBounds(120, 0, 40, 40);
     
     int labelWidth = 80;
     int sliderSide = getWidth()/m_Sliders.size();

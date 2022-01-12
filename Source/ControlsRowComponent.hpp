@@ -37,6 +37,7 @@ public:
     public:
         virtual ~Listener() = default;
         virtual void handleValueChanged(ControlsRowComponent* source, int index, float value) = 0;
+        virtual void setEnabled(ControlsRowComponent* source, bool enabled) = 0;
     };
     
     void setListener(Listener* listener);
@@ -57,7 +58,8 @@ private:
     Listener* m_Listener;
 
     Label m_TitleLabel;
-
+    ToggleButton enableButton;
+    
     Array<Slider*> m_Sliders;
     Array<Label*> m_Labels;
 

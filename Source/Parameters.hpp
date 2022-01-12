@@ -17,6 +17,7 @@
 struct Parameters {
 
     struct Reverb {
+        bool enabled = false;
         float dry = 0.5;
         float wet = 0.5;
         float room = 0.33;
@@ -26,6 +27,7 @@ struct Parameters {
     };
     
     struct Distortion {
+        bool enabled = false;
         float preGain = 0.5;
         float postGain = 0.6;
     };

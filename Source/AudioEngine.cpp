@@ -92,6 +92,7 @@ void AudioEngine::updateEffectsWithParameters(Parameters parameters)
 void AudioEngine::updateReverb(Parameters::Reverb params)
 {
     auto& reverb = fxChain.template get<reverbIndex>();
+        
     auto effectParams = reverb.getParameters();
     
     effectParams.dryLevel = params.dry;
@@ -102,6 +103,7 @@ void AudioEngine::updateReverb(Parameters::Reverb params)
     effectParams.freezeMode = params.freeze;
 
     reverb.setParameters(effectParams);
+    reverb.setEnabled(params.enabled);
 }
 
 void AudioEngine::updateDistortion(Parameters::Distortion parameters)
@@ -109,6 +111,7 @@ void AudioEngine::updateDistortion(Parameters::Distortion parameters)
     auto& distoriton = fxChain.template get<distortionIndex>();
     distoriton.setPreGain(parameters.preGain);
     distoriton.setPostGain(parameters.postGain);
+    distoriton.setEnabled(parameters.enabled);
 }
 
 void AudioEngine::releaseResources() {}

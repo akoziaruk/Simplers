@@ -26,8 +26,10 @@ private:
     //==============================================================================
     void resized() override;
     void paint(Graphics &g) override;
-    void handleValueChanged(ControlsRowComponent* source, int index, float value) override;
     
+    void setEnabled(ControlsRowComponent* source, bool enabled) override;
+    void handleValueChanged(ControlsRowComponent* source, int index, float value) override;
+
     void updateParameters(Parameters::Reverb* reverb, int index, float value);
     void updateParameters(Parameters::Distortion* distortion, int index, float value);
 

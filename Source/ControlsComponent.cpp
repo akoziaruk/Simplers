@@ -15,17 +15,17 @@ ControlsComponent::ControlsComponent(AudioEffectsState& s): m_State(s)
     auto parameters = m_State.getParameters();
     
     m_ReverbControls.setSlidersData(Array<SliderData>(SliderData("Dry",       parameters.reverb.dry),
-                                                    SliderData("Wet",       parameters.reverb.wet),
-                                                    SliderData("Room",      parameters.reverb.room),
-                                                    SliderData("Damping",   parameters.reverb.damping),
-                                                    SliderData("Width",     parameters.reverb.width),
-                                                    SliderData("Freeze",    parameters.reverb.freeze)));
+                                                      SliderData("Wet",       parameters.reverb.wet),
+                                                      SliderData("Room",      parameters.reverb.room),
+                                                      SliderData("Damping",   parameters.reverb.damping),
+                                                      SliderData("Width",     parameters.reverb.width),
+                                                      SliderData("Freeze",    parameters.reverb.freeze)));
     
     m_ReverbControls.setListener(this);
     addAndMakeVisible(m_ReverbControls);
     
     m_DistortionControls.setSlidersData(Array<SliderData>(SliderData("Pre Gain",    parameters.distortion.preGain),
-                                                        SliderData("Post Gain",   parameters.distortion.postGain)));
+                                                          SliderData("Post Gain",   parameters.distortion.postGain)));
     
     m_DistortionControls.setListener(this);
     addAndMakeVisible(m_DistortionControls);
@@ -55,6 +55,18 @@ void ControlsComponent::paint(Graphics &g)
     g.drawRoundedRectangle (bounds, cornerSize, 0.5f);
 }
 
+void ControlsComponent::setEnabled(ControlsRowComponent* source, bool enabled)
+{
+    auto parameters = m_State.getParameters();
+
+    if (source == &m_ReverbControls)
+        parameters.reverb.enabled = enabled;
+    else if (source == &m_DistortionControls)
+        parameters.distortion.enabled = enabled;
+    
+    m_State.setParameters(parameters);
+}
+
 void ControlsComponent::handleValueChanged(ControlsRowComponent *source, int index, float value)
 {
     auto parameters = m_State.getParameters();
@@ -72,26 +84,27 @@ void ControlsComponent::handleValueChanged(ControlsRowComponent *source, int ind
 void ControlsComponent::updateParameters(Parameters::Reverb *reverb, int index, float value)
 {
     switch (Reverb(index)) {
-        case dry:
-            reverb->dry = value;        break;
-        case wet:
-            reverb->wet = value;        break;
-        case room:
-            reverb->room = value;       break;
-        case damping:
-            reverb->damping = value;    break;
-        case width:
-            reverb->width = value;      break;
-        case freeze:
-            reverb->freeze = value;     break;
+        case Reverb::dry:
+            reverb->dry = value;                break;
+        case Reverb::wet:
+            reverb->wet = value;                break;
+        case Reverb::room:
+            reverb->room = value;               break;
+        case Reverb::damping:
+            reverb->damping = value;            break;
+        case Reverb::width:
+            reverb->width = value;              break;
+        case Reverb::freeze:
+            reverb->freeze = value;             break;
     }
 }
 
 void ControlsComponent::updateParameters(Parameters::Distortion *distortion, int index, float value)
 {
     switch (Distortion(index)) {
-        case preGain:
-            distortion->preGain = value;      break;
-        case postGain:
-            distortion->postGain = value;     break;
-}}
+        case Distortion::preGain:
+            distortion->preGain = value;            break;
+        case Distortion::postGain:
+            distortion->postGain = value;           break;
+    }
+}
