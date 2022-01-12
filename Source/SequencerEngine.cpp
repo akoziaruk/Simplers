@@ -10,6 +10,8 @@
 
 #include "SequencerEngine.hpp"
 
+#define GRID_SIZE 4
+
 SequencerEngine::SequencerEngine(int _bpm): m_BPM(_bpm)
 {
     for (int i = 0; i < m_TotalLength; i++) {
@@ -87,7 +89,7 @@ void SequencerEngine::togglePlay()
 
 void SequencerEngine::prepareUpdateInterval()
 {
-    m_UpdateInterval = 60.0 / m_BPM * m_SampleRate / m_GridSize;
+    m_UpdateInterval = 60.0 / m_BPM * m_SampleRate / GRID_SIZE;
 }
 
 

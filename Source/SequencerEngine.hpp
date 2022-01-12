@@ -55,7 +55,6 @@ private:
     int m_UpdateInterval = 0;
     double m_SampleRate = 0;
     
-    const int m_GridSize = 4;
     const int m_TotalLength = 16;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SequencerEngine)
