@@ -47,7 +47,7 @@ void SequencerEngine::getNextEvents(MidiKeyboardState &state, int startSample, i
     m_TotalSamples += numSamples;
     m_SamplesRemining = m_TotalSamples % m_UpdateInterval;
     
-    if ((m_SamplesRemining + numSamples) >= m_UpdateInterval) {
+    if ((m_SamplesRemining + numSamples) >= m_UpdateInterval-1) {
         Array<int>& array = *sequence[m_Position];
    
         for (int i = 0; i < array.size(); i++) {
