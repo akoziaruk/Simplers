@@ -24,6 +24,7 @@
 		500C625EED59C705721058F6 /* ControlsRowComponent.cpp */ = {isa = PBXBuildFile; fileRef = AFD45C743F3BA71D7BBCBCCA; };
 		564AA333B7B2C2A928FDA328 /* CoreMIDI.framework */ = {isa = PBXBuildFile; fileRef = D41B043FEAF7267E89D7D898; };
 		5B83A7DF5A4D03A5C277FBFB /* include_juce_audio_utils.mm */ = {isa = PBXBuildFile; fileRef = 638186D843BB703D0BC4A0B9; };
+		5B8C3A1ECAA5598657740DF2 /* LabelLookAndFeel.h */ = {isa = PBXBuildFile; fileRef = 978100550313356F3843ABD1; };
 		5BEED7DD920EC28739F11F05 /* include_juce_audio_processors.mm */ = {isa = PBXBuildFile; fileRef = 08C497796F520051257E87E5; };
 		68BF3F7A30038AE9DEEFBEAB /* include_juce_audio_formats.mm */ = {isa = PBXBuildFile; fileRef = 5131682CE8F7B211083647FE; };
 		6B6DF0C57E86D8D41E39FA95 /* SequencerComponent.cpp */ = {isa = PBXBuildFile; fileRef = 7F003DF11AFF68C421E24F85; };
@@ -102,6 +103,7 @@
 		83EC855353BCD56776AD3EE7 /* SequencerEngine.hpp */ /* SequencerEngine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SequencerEngine.hpp; path = ../../Source/SequencerEngine.hpp; sourceTree = SOURCE_ROOT; };
 		87C2AFC75F229306107C615E /* juce_gui_basics */ /* juce_gui_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_basics; path = /Applications/JUCE/modules/juce_gui_basics; sourceTree = "<absolute>"; };
 		8DF8F0A1B48C8030C7361B08 /* WebKit.framework */ /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		978100550313356F3843ABD1 /* LabelLookAndFeel.h */ /* LabelLookAndFeel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LabelLookAndFeel.h; path = ../../Source/LabelLookAndFeel.h; sourceTree = SOURCE_ROOT; };
 		97E125036EAFAE63B0480C66 /* AVFoundation.framework */ /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		980782472F08D61A953411F4 /* SequencerComponent.hpp */ /* SequencerComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SequencerComponent.hpp; path = ../../Source/SequencerComponent.hpp; sourceTree = SOURCE_ROOT; };
 		9B955D62C0A0A2394E52D85D /* Images.xcassets */ /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Simplers/Images.xcassets; sourceTree = SOURCE_ROOT; };
@@ -233,6 +235,7 @@
 		312F76D82634ED5AB3988B77 /* Sequencer */ = {
 			isa = PBXGroup;
 			children = (
+				978100550313356F3843ABD1,
 				E238EAF8D7EFF604F33C8D18,
 				31A8924F03CFA6C25F124211,
 				7F003DF11AFF68C421E24F85,
@@ -441,6 +444,7 @@
 				D0420B99F0F72D74E99F8AAC,
 				7882229219477A6FB257A524,
 				500C625EED59C705721058F6,
+				5B8C3A1ECAA5598657740DF2,
 				95B4CD1235C41E978FD8BFCC,
 				6B6DF0C57E86D8D41E39FA95,
 				CA1E49A348211ED8EFD0D9AD,

@@ -13,6 +13,7 @@
 #include <JuceHeader.h>
 #include "SequencerEngine.hpp"
 #include "SequencerButton.h"
+#include "LabelLookAndFeel.h"
 
 using namespace juce;
 
@@ -38,6 +39,7 @@ private:
 
     TextButton m_PlayStopButton;
     Label m_BPMLabel;
+    LabelLookAndFeel m_LookAndFeel;
     
     int m_NumberOfRows;
     int m_NumberOfItems;

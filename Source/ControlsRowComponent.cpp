@@ -57,6 +57,7 @@ void ControlsRowComponent::addSlider(float value)
     slider->setValue(value);
     slider->setRange(0, 1);
     slider->setColour(Slider::textBoxTextColourId, Colours::black);
+    slider->setColour(Slider::thumbColourId, Colour(225, 169, 193));
     slider->addListener(this);
     
     m_Sliders.add(slider);
@@ -80,7 +81,7 @@ void ControlsRowComponent::paint(Graphics &g)
     auto cornerSize = 6.0f;
     auto bounds = getLocalBounds().toFloat().reduced (0.5f, 0.5f);
     
-    g.setColour (Colour (178, 152, 220));
+    g.setColour (Colour (172, 117, 149));
     g.fillRoundedRectangle (bounds, cornerSize);
     
     g.setColour (findColour (ComboBox::outlineColourId));

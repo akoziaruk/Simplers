@@ -41,6 +41,8 @@
               file="Source/ControlsRowComponent.hpp"/>
       </GROUP>
       <GROUP id="{DFB72D30-A179-0E90-8574-5CCF98725F40}" name="Sequencer">
+        <FILE id="sZPXhB" name="LabelLookAndFeel.h" compile="1" resource="0"
+              file="Source/LabelLookAndFeel.h"/>
         <FILE id="LWr4Hp" name="SequencerButton.cpp" compile="1" resource="0"
               file="Source/SequencerButton.cpp"/>
         <FILE id="SZLJrP" name="SequencerButton.h" compile="0" resource="0"

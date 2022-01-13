@@ -7,8 +7,8 @@ MainComponent::MainComponent()
     // you add any child components.
     setSize (800, 600);
     
-    padButton.setColour(TextButton::ColourIds::buttonColourId, Colour(191, 204, 148));
-    sequencerButton.setColour(TextButton::ColourIds::buttonColourId, Colour(230, 170, 206));
+    padButton.setColour(TextButton::ColourIds::buttonColourId, Colour(234, 215, 209));
+    sequencerButton.setColour(TextButton::ColourIds::buttonColourId, Colour(225, 169, 193));
     
     addAndMakeVisible (padButton);
     addAndMakeVisible (sequencerButton);
@@ -37,7 +37,7 @@ MainComponent::~MainComponent()
 //==============================================================================
 void MainComponent::paint (juce::Graphics& g)
 {
-    g.fillAll (Colour (238, 132, 52));
+    g.fillAll (Colour (31, 26, 56));
 }
 
 void MainComponent::resized()
@@ -49,8 +49,8 @@ void MainComponent::resized()
     controlsComponent   .setBounds(width + margin*2, margin, width, height);
     sequencerComponent  .setBounds(margin*2, margin, getWidth()*0.9, height);
     
-    int buttonSide = 40;
-    int x = getWidth()-buttonSide-8;
+    int buttonSide = 30;
+    int x = getWidth()-buttonSide-16;
     
     padButton           .setBounds(x, 20, buttonSide, buttonSide);
     sequencerButton     .setBounds(x, 20+buttonSide+4, buttonSide, buttonSide);

@@ -48,7 +48,7 @@ void ControlsComponent::paint(Graphics &g)
     auto cornerSize = 6.0f;
     auto bounds = getLocalBounds().toFloat().reduced (0.5f, 0.5f);
     
-    g.setColour (Colour (166, 99, 204));
+    g.setColour (Colour (77, 53, 84));
     g.fillRoundedRectangle (bounds, cornerSize);
     
     g.setColour (findColour (ComboBox::outlineColourId));

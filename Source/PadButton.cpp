@@ -14,7 +14,7 @@ PadButton::~PadButton() {}
 void PadButton::paintButton (Graphics& g, bool, bool) {
     auto cornerSize = 6.0f;
 
-    Colour buttonColour = getToggleState() ? Colour (73, 109, 219) : Colour (113, 126, 195);
+    Colour buttonColour = getToggleState() ? Colour (221, 153, 187) : Colour (172, 117, 149);
     auto bounds = getLocalBounds().toFloat().reduced (0.5f, 0.5f);
     g.setColour (buttonColour);
     g.fillRoundedRectangle (bounds, cornerSize);
