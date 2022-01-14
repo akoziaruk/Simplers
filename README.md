@@ -1,6 +1,6 @@
 # Simpler
 
-Sample application implemented using Juce audio engine. Written in C++. Build tested on iOS.
+Sample application implemented on Juce audio engine. Written in C++. Build & tested on iOS.
 
 Play Drum Pads and update in real time Reverb & Distortion sound effects with low latency. 
 
@@ -10,4 +10,4 @@ Drum sequencer can be used to create beat and change BPM speed.
 
 ![2](https://user-images.githubusercontent.com/6095185/149424504-c14776df-9a04-4a5a-903f-8a900e062014.png)
 
-Reverb & Distortion effects applied to both Pads and Sequencer.
+Reverb & Distortion effects applied on both Pads and Sequencer.
