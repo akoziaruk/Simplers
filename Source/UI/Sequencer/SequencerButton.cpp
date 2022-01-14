@@ -18,6 +18,7 @@ void SequencerButton::paintButton (Graphics& g, bool, bool) {
 
     Colour buttonColour = getToggleState() ? m_SelectedColor: m_DeselectedColor;
     auto bounds = getLocalBounds().toFloat().reduced (0.5f, 0.5f);
+    
     g.setColour (buttonColour);
     g.fillRoundedRectangle (bounds, cornerSize);
     
@@ -25,8 +26,9 @@ void SequencerButton::paintButton (Graphics& g, bool, bool) {
     g.drawRoundedRectangle (bounds, cornerSize, 1.0f);
 }
 
-void SequencerButton::buttonStateChanged(){}
-
-void SequencerButton::colourChanged() {
+void SequencerButton::colourChanged()
+{
     repaint();
 }
+
+void SequencerButton::buttonStateChanged() {}

@@ -20,7 +20,6 @@ ControlsRowComponent::ControlsRowComponent(String title)
     enableButton.setColour(ToggleButton::ColourIds::tickColourId, Colours::black);
     enableButton.setColour(ToggleButton::ColourIds::tickDisabledColourId, Colours::black);
     enableButton.onClick = [this] { m_Listener->setEnabled(this, enableButton.getToggleState()); };
-    
     addAndMakeVisible(enableButton);
 }
 
@@ -35,9 +34,8 @@ void ControlsRowComponent::setSlidersData(Array<SliderData> items)
 
 ControlsRowComponent::~ControlsRowComponent()
 {
-    for (int i = 0; i < m_Sliders.size(); i++) {
+    for (int i = 0; i < m_Sliders.size(); i++)
         m_Sliders[i]->removeListener (this);
-    }
 }
 
 void ControlsRowComponent::setListener(Listener *l)

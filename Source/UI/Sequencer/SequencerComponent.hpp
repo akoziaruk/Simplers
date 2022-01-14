@@ -32,6 +32,8 @@ public:
 private:
     
     void updatePlayStopButton();
+    void playButtonClicked();
+    void sequencerButtonClicked(Button* button);
     Colour colorForDeselectedItem(int index);
     
     SequencerEngine& m_Engine;

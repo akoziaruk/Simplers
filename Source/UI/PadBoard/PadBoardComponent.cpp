@@ -12,7 +12,6 @@
 
 PadBoardComponent::PadBoardComponent(MidiKeyboardState& s): m_State(s)
 {
-    // add pads
     for (int i = 0; i < 3*3; i++) {
         PadButton* pad = new PadButton();
         pad->setComponentID(String(i));
@@ -35,7 +34,6 @@ PadBoardComponent::~PadBoardComponent()
 
 void PadBoardComponent::buttonStateChanged(Button* button)
 {
-    // handle buttons action
     String id = button->getComponentID();
     int index = id.getIntValue();
     PadButton::ButtonState buttonState = button->getState();
@@ -48,7 +46,6 @@ void PadBoardComponent::buttonStateChanged(Button* button)
 
 void PadBoardComponent::resized()
 {
-    // resize pads
     float m = 8;
     float side = (getHeight()-m)/3-m;
     int index = 0;

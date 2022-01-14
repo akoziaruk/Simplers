@@ -71,12 +71,10 @@ void ControlsComponent::handleValueChanged(ControlsRowComponent *source, int ind
 {
     auto parameters = m_State.getParameters();
 
-    if (source == &m_ReverbControls) {
+    if (source == &m_ReverbControls)
         updateParameters(&parameters.reverb, index, value);
-    }
-    else if (source == &m_DistortionControls) {
+    else if (source == &m_DistortionControls)
         updateParameters(&parameters.distortion, index, value);
-    }
     
     m_State.setParameters(parameters);
 }

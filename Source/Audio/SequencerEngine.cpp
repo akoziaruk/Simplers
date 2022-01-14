@@ -14,15 +14,15 @@
 
 SequencerEngine::SequencerEngine(int _bpm): m_BPM(_bpm)
 {
-    for (int i = 0; i < m_TotalLength; i++) {
+    for (int i = 0; i < m_TotalLength; i++)
         sequence.add(new Array<int>());
-    }
 }
 
 SequencerEngine::~SequencerEngine() {
     for (int i = sequence.size(); i > 0; i--) {
         Array<int>* array = sequence[i];
         sequence.remove(i);
+        
         delete array;
     }
 }
@@ -31,11 +31,16 @@ bool SequencerEngine::toggle(int sampleIndex, int position)
 {
     Array<int>* arr = sequence[position];
     int index = arr->indexOf(sampleIndex);
+    
     if (index == -1) {
+        
         arr->add(sampleIndex);
+        
         return true;
     } else {
+        
         arr->remove(index);
+        
         return false;
     }
 }
@@ -48,6 +53,7 @@ void SequencerEngine::getNextEvents(MidiKeyboardState &state, int startSample, i
     m_SamplesRemining = m_TotalSamples % m_UpdateInterval;
     
     if ((m_SamplesRemining + numSamples) >= m_UpdateInterval-1) {
+        
         Array<int>& array = *sequence[m_Position];
    
         for (int i = 0; i < array.size(); i++) {

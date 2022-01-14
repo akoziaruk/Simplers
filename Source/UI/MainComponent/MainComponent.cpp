@@ -45,15 +45,16 @@ void MainComponent::resized()
     int margin = 16;
     int width = getWidth() * 0.45;
     int height = getHeight() - margin*2;
-    padComponent        .setBounds(margin*2, margin, height, height);
-    controlsComponent   .setBounds(width + margin*2, margin, width, height);
-    sequencerComponent  .setBounds(margin*2, margin, getWidth()*0.9, height);
+    
+    padComponent.setBounds(margin*2, margin, height, height);
+    controlsComponent.setBounds(width + margin*2, margin, width, height);
+    sequencerComponent.setBounds(margin*2, margin, getWidth()*0.9, height);
     
     int buttonSide = 30;
     int x = getWidth()-buttonSide-16;
     
-    padButton           .setBounds(x, 20, buttonSide, buttonSide);
-    sequencerButton     .setBounds(x, 20+buttonSide+4, buttonSide, buttonSide);
+    padButton.setBounds(x, 20, buttonSide, buttonSide);
+    sequencerButton.setBounds(x, 20+buttonSide+4, buttonSide, buttonSide);
 }
 
 void MainComponent::buttonClicked(Button *button)

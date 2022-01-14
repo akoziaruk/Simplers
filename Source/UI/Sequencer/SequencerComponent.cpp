@@ -65,17 +65,26 @@ SequencerComponent::~SequencerComponent()
 
 void SequencerComponent::buttonClicked(Button* button)
 {
-    if (button == &m_PlayStopButton) {
-        m_Engine.togglePlay();
-        updatePlayStopButton();
-    } else {
-        int index = button->getComponentID().getIntValue();
-        int position = index % m_NumberOfItems;
-        int sampleIndex = floor(index / m_NumberOfItems);
-        
-        bool state = m_Engine.toggle(sampleIndex, position);
-        button->setToggleState(state, NotificationType::dontSendNotification);
-    }
+    if (button == &m_PlayStopButton)
+        playButtonClicked();
+    else
+        sequencerButtonClicked(button);
+}
+
+void SequencerComponent::playButtonClicked()
+{
+    m_Engine.togglePlay();
+    updatePlayStopButton();
+}
+
+void SequencerComponent::sequencerButtonClicked(Button *button)
+{
+    int index = button->getComponentID().getIntValue();
+    int position = index % m_NumberOfItems;
+    int sampleIndex = floor(index / m_NumberOfItems);
+    
+    bool state = m_Engine.toggle(sampleIndex, position);
+    button->setToggleState(state, NotificationType::dontSendNotification);
 }
 
 void SequencerComponent::resized()
@@ -102,12 +111,16 @@ void SequencerComponent::paint (juce::Graphics& g)
 {
     auto cornerSize = 6.0f;
     auto bounds = getLocalBounds().toFloat().reduced (0.5f, 0.5f);
+    
     g.setColour (Colour (77, 53, 84));
     g.fillRoundedRectangle (bounds, cornerSize);
+    
     g.setColour (findColour (ComboBox::outlineColourId));
     g.drawRoundedRectangle (bounds, cornerSize, 0.5f);
     
+    // draw cursor
     float x = m_ButtonStartX + (m_ButtonSide + PADDING) * m_Engine.getPosition();
+    
     g.setColour(Colour(172, 117, 149));
     g.fillRoundedRectangle(Rectangle<float>(x, getHeight()-8.0, m_ButtonSide, 6.0), 2);
 }
@@ -117,7 +130,4 @@ void SequencerComponent::updatePlayStopButton()
     m_PlayStopButton.setButtonText(m_Engine.isPlaying() ? "Stop" : "Play");
 }
 
-void SequencerComponent::update()
-{
-    
-}
+void SequencerComponent::update() {}

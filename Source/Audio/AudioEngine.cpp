@@ -37,15 +37,12 @@ void AudioEngine::addSound(String name, int note)
     auto resourceFile = assetsDir.getChildFile (name);;
     auto inputStream = resourceFile.createInputStream();
     
-    // create reader
     WavAudioFormat wavFormat;
     std::unique_ptr<AudioFormatReader> audioReader (wavFormat.createReaderFor (inputStream.release(), true));
 
-    // midi range
     BigInteger allNotes;
     allNotes.setRange (note, note+1, true);
     
-    // setup synth
     m_Sampler.addVoice (new SamplerVoice());
     m_Sampler.addSound (new SamplerSound (name, *audioReader, allNotes, note, 0, 0.5, 10.0));
 }
