@@ -11,3 +11,8 @@ Drum Sequencer can be used to create beat and change BPM speed.
 ![2](https://user-images.githubusercontent.com/6095185/149424504-c14776df-9a04-4a5a-903f-8a900e062014.png)
 
 Reverb & Distortion effects applied on both Pads and Sequencer.
+
+Video preview:
+
+https://user-images.githubusercontent.com/6095185/149535860-6160563b-1f8c-4c2d-ab46-e481259752bb.mov
+
