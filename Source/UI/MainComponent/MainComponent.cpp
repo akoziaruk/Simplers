@@ -19,7 +19,7 @@ MainComponent::MainComponent()
     padButton.addListener(this);
     sequencerButton.addListener(this);
     
-    audioDeviceManager.initialise (2, 2, nullptr, true, {}, nullptr);
+    audioDeviceManager.initialise (0, 2, nullptr, true, {}, nullptr);
 
     audioSourcePlayer.setSource (&audioEngine);
     audioDeviceManager.addAudioCallback (&audioSourcePlayer);
