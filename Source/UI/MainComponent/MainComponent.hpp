@@ -1,6 +1,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "MainComponent.hpp"
 #include "AudioEngine.hpp"
 #include "PadBoardComponent.hpp"
 #include "ControlsComponent.hpp"

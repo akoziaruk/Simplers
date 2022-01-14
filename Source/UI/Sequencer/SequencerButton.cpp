@@ -8,13 +8,9 @@
   ==============================================================================
 */
 
-#include "SequencerButton.h"
+#include "SequencerButton.hpp"
 
-SequencerButton::SequencerButton(Colour s, Colour d): Button(""), m_SelectedColor(s), m_DeselectedColor(d)
-{
-    
-}
-
+SequencerButton::SequencerButton(Colour s, Colour d): Button(""), m_SelectedColor(s), m_DeselectedColor(d) {}
 SequencerButton::~SequencerButton() {}
 
 void SequencerButton::paintButton (Graphics& g, bool, bool) {
@@ -29,9 +25,7 @@ void SequencerButton::paintButton (Graphics& g, bool, bool) {
     g.drawRoundedRectangle (bounds, cornerSize, 1.0f);
 }
 
-void SequencerButton::buttonStateChanged()
-{
-}
+void SequencerButton::buttonStateChanged(){}
 
 void SequencerButton::colourChanged() {
     repaint();

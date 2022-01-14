@@ -7,7 +7,7 @@
 */
 
 #include <JuceHeader.h>
-#include "MainComponent.h"
+#include "MainComponent.hpp"
 
 //==============================================================================
 class SimplersApplication  : public juce::JUCEApplication

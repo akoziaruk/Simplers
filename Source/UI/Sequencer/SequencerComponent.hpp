@@ -12,8 +12,8 @@
 
 #include <JuceHeader.h>
 #include "SequencerEngine.hpp"
-#include "SequencerButton.h"
-#include "LabelLookAndFeel.h"
+#include "SequencerButton.hpp"
+#include "LabelLookAndFeel.hpp"
 
 using namespace juce;
 

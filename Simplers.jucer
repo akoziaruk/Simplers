@@ -1,57 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="Edm923" name="Simplers" projectType="guiapp" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              headerPath="$(SRCROOT)/../../Source/UI/MainComponent&#10;$(SRCROOT)/../../Source/UI/PadBoard&#10;$(SRCROOT)/../../Source/UI/Sequencer&#10;$(SRCROOT)/../../Source/UI/SoundEffects&#10;$(SRCROOT)/../../Source/Audio">
   <MAINGROUP id="tTIC6c" name="Simplers">
     <GROUP id="{AB41D05E-4D01-0808-EAB9-3E11C2F6F13D}" name="Source">
       <FILE id="hS1cxJ" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
-      <FILE id="oxg4tz" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
-      <FILE id="uyasGm" name="MainComponent.cpp" compile="1" resource="0"
-            file="Source/MainComponent.cpp"/>
     </GROUP>
-    <GROUP id="{DE370D81-E0D6-FFAC-D19B-12EA4D6C2D43}" name="Audio">
-      <FILE id="EkOOlo" name="SequencerEngine.cpp" compile="1" resource="0"
-            file="Source/SequencerEngine.cpp"/>
-      <FILE id="sIeiHB" name="SequencerEngine.hpp" compile="0" resource="0"
-            file="Source/SequencerEngine.hpp"/>
-      <FILE id="NB1SZ0" name="AudioEffectsState.hpp" compile="0" resource="0"
-            file="Source/AudioEffectsState.hpp"/>
-      <FILE id="MHugiI" name="AudioEngine.cpp" compile="1" resource="0" file="Source/AudioEngine.cpp"/>
-      <FILE id="jy133I" name="AudioEngine.hpp" compile="0" resource="0" file="Source/AudioEngine.hpp"/>
-      <FILE id="vPWt2Y" name="Distortion.hpp" compile="0" resource="0" file="Source/Distortion.hpp"/>
-      <FILE id="xyKYLi" name="Parameters.hpp" compile="0" resource="0" file="Source/Parameters.hpp"/>
+    <GROUP id="{12252819-20C2-6690-A9CD-C5D9E5CA04B3}" name="UI">
+      <GROUP id="{02A33561-0002-6B5F-B739-3281F12291C1}" name="MainComponent">
+        <FILE id="hD4uQU" name="MainComponent.cpp" compile="1" resource="0"
+              file="Source/UI/MainComponent/MainComponent.cpp"/>
+        <FILE id="Y3Hi3A" name="MainComponent.hpp" compile="0" resource="0"
+              file="Source/UI/MainComponent/MainComponent.hpp"/>
+      </GROUP>
+      <GROUP id="{D5366BD4-404A-ACE7-A9AE-C197DD083129}" name="PadBoard">
+        <FILE id="Y6v3iy" name="PadBoardComponent.cpp" compile="1" resource="0"
+              file="Source/UI/PadBoard/PadBoardComponent.cpp"/>
+        <FILE id="NgW8oM" name="PadBoardComponent.hpp" compile="0" resource="0"
+              file="Source/UI/PadBoard/PadBoardComponent.hpp"/>
+        <FILE id="zrrMsW" name="PadButton.cpp" compile="1" resource="0" file="Source/UI/PadBoard/PadButton.cpp"/>
+        <FILE id="Umzuzh" name="PadButton.hpp" compile="0" resource="0" file="Source/UI/PadBoard/PadButton.hpp"/>
+      </GROUP>
+      <GROUP id="{0B8709D6-0D88-328D-7F5C-0F0CB350A62E}" name="Sequencer">
+        <FILE id="OKEVB7" name="LabelLookAndFeel.hpp" compile="0" resource="0"
+              file="Source/UI/Sequencer/LabelLookAndFeel.hpp"/>
+        <FILE id="jorj5T" name="SequencerButton.cpp" compile="1" resource="0"
+              file="Source/UI/Sequencer/SequencerButton.cpp"/>
+        <FILE id="bNeNFR" name="SequencerButton.hpp" compile="0" resource="0"
+              file="Source/UI/Sequencer/SequencerButton.hpp"/>
+        <FILE id="CEzn7C" name="SequencerComponent.cpp" compile="1" resource="0"
+              file="Source/UI/Sequencer/SequencerComponent.cpp"/>
+        <FILE id="bLxgHD" name="SequencerComponent.hpp" compile="0" resource="0"
+              file="Source/UI/Sequencer/SequencerComponent.hpp"/>
+      </GROUP>
+      <GROUP id="{5F127943-7F7F-10D3-5DF2-FB5876A3C1AA}" name="SoundEffects">
+        <FILE id="mzlRCH" name="ControlsComponent.cpp" compile="1" resource="0"
+              file="Source/UI/SoundEffects/ControlsComponent.cpp"/>
+        <FILE id="smEVjs" name="ControlsComponent.hpp" compile="0" resource="0"
+              file="Source/UI/SoundEffects/ControlsComponent.hpp"/>
+        <FILE id="MQ7tP3" name="ControlsRowComponent.cpp" compile="1" resource="0"
+              file="Source/UI/SoundEffects/ControlsRowComponent.cpp"/>
+        <FILE id="yx23vc" name="ControlsRowComponent.hpp" compile="0" resource="0"
+              file="Source/UI/SoundEffects/ControlsRowComponent.hpp"/>
+      </GROUP>
     </GROUP>
-    <GROUP id="{7D45A0E5-1088-C7AA-6384-A6B7CAEF703E}" name="UI">
-      <GROUP id="{1E41358F-8F32-CEEA-B842-5297CA9F9C35}" name="PadBoard">
-        <FILE id="mw0gYP" name="PadBoardComponent.cpp" compile="1" resource="0"
-              file="Source/PadBoardComponent.cpp"/>
-        <FILE id="riHZqx" name="PadBoardComponent.hpp" compile="0" resource="0"
-              file="Source/PadBoardComponent.hpp"/>
-        <FILE id="jNXjhD" name="PadButton.cpp" compile="1" resource="0" file="Source/PadButton.cpp"/>
-        <FILE id="KXn1MC" name="PadButton.hpp" compile="0" resource="0" file="Source/PadButton.hpp"/>
-      </GROUP>
-      <GROUP id="{9DE511C0-0363-D8E3-08AE-370BA8E4D69D}" name="SoundEffects">
-        <FILE id="IXMVzG" name="ControlsComponent.cpp" compile="1" resource="0"
-              file="Source/ControlsComponent.cpp"/>
-        <FILE id="SomgyT" name="ControlsComponent.hpp" compile="0" resource="0"
-              file="Source/ControlsComponent.hpp"/>
-        <FILE id="NH8Qu8" name="ControlsRowComponent.cpp" compile="1" resource="0"
-              file="Source/ControlsRowComponent.cpp"/>
-        <FILE id="yqFdUM" name="ControlsRowComponent.hpp" compile="0" resource="0"
-              file="Source/ControlsRowComponent.hpp"/>
-      </GROUP>
-      <GROUP id="{DFB72D30-A179-0E90-8574-5CCF98725F40}" name="Sequencer">
-        <FILE id="sZPXhB" name="LabelLookAndFeel.h" compile="1" resource="0"
-              file="Source/LabelLookAndFeel.h"/>
-        <FILE id="LWr4Hp" name="SequencerButton.cpp" compile="1" resource="0"
-              file="Source/SequencerButton.cpp"/>
-        <FILE id="SZLJrP" name="SequencerButton.h" compile="0" resource="0"
-              file="Source/SequencerButton.h"/>
-        <FILE id="buzx2F" name="SequencerComponent.cpp" compile="1" resource="0"
-              file="Source/SequencerComponent.cpp"/>
-        <FILE id="l4wgxg" name="SequencerComponent.hpp" compile="0" resource="0"
-              file="Source/SequencerComponent.hpp"/>
-      </GROUP>
+    <GROUP id="{954F9F87-5CDD-39DB-7490-8EFE65C6296B}" name="Audio">
+      <FILE id="ess74T" name="AudioEffectsState.hpp" compile="0" resource="0"
+            file="Source/Audio/AudioEffectsState.hpp"/>
+      <FILE id="fqdl8B" name="AudioEngine.cpp" compile="1" resource="0" file="Source/Audio/AudioEngine.cpp"/>
+      <FILE id="z2MdoN" name="AudioEngine.hpp" compile="0" resource="0" file="Source/Audio/AudioEngine.hpp"/>
+      <FILE id="v9dvS3" name="Distortion.hpp" compile="0" resource="0" file="Source/Audio/Distortion.hpp"/>
+      <FILE id="OJKoga" name="Parameters.hpp" compile="0" resource="0" file="Source/Audio/Parameters.hpp"/>
+      <FILE id="e3JF6v" name="SequencerEngine.cpp" compile="1" resource="0"
+            file="Source/Audio/SequencerEngine.cpp"/>
+      <FILE id="Ht51Wa" name="SequencerEngine.hpp" compile="0" resource="0"
+            file="Source/Audio/SequencerEngine.hpp"/>
     </GROUP>
     <GROUP id="{E077EDA0-EE6F-2801-3A52-929F77799056}" name="Assets">
       <FILE id="pj9BDa" name="clap.wav" compile="0" resource="0" file="Assets/clap.wav"
