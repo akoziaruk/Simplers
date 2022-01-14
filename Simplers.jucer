@@ -81,7 +81,8 @@
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
   <EXPORTFORMATS>
     <XCODE_IPHONE targetFolder="Builds/iOS" iosDevelopmentTeamID="8V2FDR3JP9" iosScreenOrientation="UIInterfaceOrientationLandscapeLeft,UIInterfaceOrientationLandscapeRight"
-                  iPadScreenOrientation="UIInterfaceOrientationLandscapeLeft,UIInterfaceOrientationLandscapeRight,UIInterfaceOrientationPortrait">
+                  iPadScreenOrientation="UIInterfaceOrientationLandscapeLeft,UIInterfaceOrientationLandscapeRight,UIInterfaceOrientationPortrait"
+                  microphonePermissionNeeded="0">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="Simplers"/>
         <CONFIGURATION isDebug="0" name="Release" targetName="Simplers"/>
