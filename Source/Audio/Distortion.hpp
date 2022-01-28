@@ -18,7 +18,7 @@ public:
     //==============================================================================
     Distortion()
     {
-        auto& waveshaper = processorChain.template get<waveshaperIndex>();
+        auto& waveshaper = m_ProcessorChain.template get<waveshaperIndex>();
         waveshaper.functionToUse = [] (Type x) {
             return std::tanh (x);
         };
@@ -27,39 +27,39 @@ public:
     void setPreGain (float value) //value in range 0..1
     {
         float decibels = jmap<float>(value, 20, 70);
-        auto& preGain = processorChain.template get<preGainIndex>();
+        auto& preGain = m_ProcessorChain.template get<preGainIndex>();
         preGain.setGainDecibels (decibels);
     }
 
     void setPostGain (float value) //value in range 0..1
     {
         float decibels = jmap<float>(value, -50, 0);
-        auto& postGain = processorChain.template get<postGainIndex>();
+        auto& postGain = m_ProcessorChain.template get<postGainIndex>();
         postGain.setGainDecibels (decibels);
     }
     
     void setEnabled(bool enabled)
     {
-        processorChain.template setBypassed<filterIndex>    (!enabled);
-        processorChain.template setBypassed<preGainIndex>   (!enabled);
-        processorChain.template setBypassed<waveshaperIndex>(!enabled);
-        processorChain.template setBypassed<postGainIndex>  (!enabled);
+        m_ProcessorChain.template setBypassed<filterIndex>    (!enabled);
+        m_ProcessorChain.template setBypassed<preGainIndex>   (!enabled);
+        m_ProcessorChain.template setBypassed<waveshaperIndex>(!enabled);
+        m_ProcessorChain.template setBypassed<postGainIndex>  (!enabled);
     }
 
     //==============================================================================
     void prepare (const juce::dsp::ProcessSpec& spec)
     {
-        auto& filter = processorChain.template get<filterIndex>();
+        auto& filter = m_ProcessorChain.template get<filterIndex>();
         filter.state = FilterCoefs::makeFirstOrderHighPass (spec.sampleRate, 1000.0f);
 
-        processorChain.prepare (spec);
+        m_ProcessorChain.prepare (spec);
     }
 
     //==============================================================================
     template <typename ProcessContext>
     void process (const ProcessContext& context) noexcept
     {
-        processorChain.process (context);
+        m_ProcessorChain.process (context);
     }
 
     //==============================================================================
@@ -75,10 +75,10 @@ public:
     using FilterCoefs = IIR::Coefficients<Type>;
 
     juce::dsp::ProcessorChain<ProcessorDuplicator<Filter, FilterCoefs>,
-                              Gain<Type>, WaveShaper<Type>, Gain<Type>> processorChain;
+                              Gain<Type>, WaveShaper<Type>, Gain<Type>> m_ProcessorChain;
 
     void reset() noexcept {
-        processorChain.reset();
+        m_ProcessorChain.reset();
     }
 
 private:

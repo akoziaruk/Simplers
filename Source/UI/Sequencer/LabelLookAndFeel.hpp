@@ -38,6 +38,5 @@ public:
         {
             g.setColour (label.findColour (Label::outlineColourId));
         }
-
     }
 };

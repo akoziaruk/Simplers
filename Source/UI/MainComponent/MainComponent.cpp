@@ -7,31 +7,31 @@ MainComponent::MainComponent()
     // you add any child components.
     setSize (800, 600);
     
-    padButton.setColour(TextButton::ColourIds::buttonColourId, Colour(234, 215, 209));
-    sequencerButton.setColour(TextButton::ColourIds::buttonColourId, Colour(225, 169, 193));
+    m_PadButton.setColour(TextButton::ColourIds::buttonColourId, Colour(234, 215, 209));
+    m_SequencerButton.setColour(TextButton::ColourIds::buttonColourId, Colour(225, 169, 193));
     
-    addAndMakeVisible (padButton);
-    addAndMakeVisible (sequencerButton);
-    addAndMakeVisible (padComponent);
-    addAndMakeVisible (controlsComponent);
-    addChildComponent (sequencerComponent);
+    addAndMakeVisible (m_PadButton);
+    addAndMakeVisible (m_SequencerButton);
+    addAndMakeVisible (m_PadComponent);
+    addAndMakeVisible (m_ControlsComponent);
+    addChildComponent (m_SequencerComponent);
     
-    padButton.addListener(this);
-    sequencerButton.addListener(this);
+    m_PadButton.addListener(this);
+    m_SequencerButton.addListener(this);
     
-    audioDeviceManager.initialise (0, 2, nullptr, true, {}, nullptr);
+    m_AudioDeviceManager.initialise (0, 2, nullptr, true, {}, nullptr);
 
-    audioSourcePlayer.setSource (&audioEngine);
-    audioDeviceManager.addAudioCallback (&audioSourcePlayer);
+    m_AudioSourcePlayer.setSource (&m_AudioEngine);
+    m_AudioDeviceManager.addAudioCallback (&m_AudioSourcePlayer);
 }
 
 MainComponent::~MainComponent()
 {
-    padButton.removeListener(this);
-    sequencerButton.removeListener(this);
+    m_PadButton.removeListener(this);
+    m_SequencerButton.removeListener(this);
 
-    audioSourcePlayer.setSource (nullptr);
-    audioDeviceManager.removeAudioCallback (&audioSourcePlayer);
+    m_AudioSourcePlayer.setSource (nullptr);
+    m_AudioDeviceManager.removeAudioCallback (&m_AudioSourcePlayer);
 }
 
 //==============================================================================
@@ -46,22 +46,22 @@ void MainComponent::resized()
     int width = getWidth() * 0.45;
     int height = getHeight() - margin*2;
     
-    padComponent.setBounds(margin*2, margin, height, height);
-    controlsComponent.setBounds(width + margin*2, margin, width, height);
-    sequencerComponent.setBounds(margin*2, margin, getWidth()*0.9, height);
+    m_PadComponent.setBounds(margin*2, margin, height, height);
+    m_ControlsComponent.setBounds(width + margin*2, margin, width, height);
+    m_SequencerComponent.setBounds(margin*2, margin, getWidth()*0.9, height);
     
     int buttonSide = 30;
     int x = getWidth()-buttonSide-16;
     
-    padButton.setBounds(x, 20, buttonSide, buttonSide);
-    sequencerButton.setBounds(x, 20+buttonSide+4, buttonSide, buttonSide);
+    m_PadButton.setBounds(x, 20, buttonSide, buttonSide);
+    m_SequencerButton.setBounds(x, 20+buttonSide+4, buttonSide, buttonSide);
 }
 
 void MainComponent::buttonClicked(Button *button)
 {
-    bool showPad = (button == &padButton);
+    bool showPad = (button == &m_PadButton);
     
-    padComponent.setVisible(showPad);
-    controlsComponent.setVisible(showPad);
-    sequencerComponent.setVisible(!showPad);
+    m_PadComponent.setVisible(showPad);
+    m_ControlsComponent.setVisible(showPad);
+    m_SequencerComponent.setVisible(!showPad);
 }

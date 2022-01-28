@@ -15,7 +15,7 @@
  */
 
 struct Parameters {
-
+    
     struct Reverb {
         bool enabled = false;
         float dry = 0.5;

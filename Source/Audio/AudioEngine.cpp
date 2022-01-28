@@ -51,7 +51,7 @@ void AudioEngine::prepareToPlay (int samplesPerBlockExpected, double sampleRate)
 {
     m_Sampler.setCurrentPlaybackSampleRate (sampleRate);
     midiSequencer.prepareToPlay(sampleRate);
-    fxChain.prepare ({ sampleRate, (juce::uint32) samplesPerBlockExpected, 2 });
+    m_FxChain.prepare ({ sampleRate, (juce::uint32) samplesPerBlockExpected, 2 });
 }
     
 void AudioEngine::getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill)
@@ -67,7 +67,7 @@ void AudioEngine::getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill)
     
     auto block = AudioBlock<float> (*bufferToFill.buffer).getSubBlock ((size_t) bufferToFill.startSample, (size_t) bufferToFill.numSamples);
     auto context = ProcessContextReplacing<float> (block);
-    fxChain.process (context);
+    m_FxChain.process (context);
 }
     
 void AudioEngine::handleValueChanged(AudioEffectsState *source, Parameters parameters)
@@ -88,7 +88,7 @@ void AudioEngine::updateEffectsWithParameters(Parameters parameters)
 
 void AudioEngine::updateReverb(Parameters::Reverb params)
 {
-    auto& reverb = fxChain.template get<reverbIndex>();
+    auto& reverb = m_FxChain.template get<reverbIndex>();
         
     auto effectParams = reverb.getParameters();
     
@@ -105,7 +105,7 @@ void AudioEngine::updateReverb(Parameters::Reverb params)
 
 void AudioEngine::updateDistortion(Parameters::Distortion parameters)
 {
-    auto& distoriton = fxChain.template get<distortionIndex>();
+    auto& distoriton = m_FxChain.template get<distortionIndex>();
     distoriton.setPreGain(parameters.preGain);
     distoriton.setPostGain(parameters.postGain);
     distoriton.setEnabled(parameters.enabled);

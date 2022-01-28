@@ -35,7 +35,6 @@ public:
     MidiKeyboardState midiState;
     AudioEffectsState audioEffectsState;
 
-
 private:
     //==============================================================================
     void addSound(String name, int note);
@@ -46,12 +45,12 @@ private:
     //==============================================================================
     Synthesiser m_Sampler;
     
+    ProcessorChain<dsp::Reverb, Distortion<float>> m_FxChain;
     enum
     {
         reverbIndex,
         distortionIndex,
     };
-    ProcessorChain<dsp::Reverb, Distortion<float>> fxChain;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AudioEngine)
 };

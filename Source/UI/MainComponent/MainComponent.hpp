@@ -30,19 +30,19 @@ public:
 private:
     //==============================================================================
 
-    AudioDeviceManager audioDeviceManager;
-    AudioSourcePlayer audioSourcePlayer;
-    AudioEngine audioEngine;
+    AudioDeviceManager  m_AudioDeviceManager;
+    AudioSourcePlayer   m_AudioSourcePlayer;
+    AudioEngine         m_AudioEngine;
     
-    PadBoardComponent   padComponent        { audioEngine.midiState };
-    ControlsComponent   controlsComponent   { audioEngine.audioEffectsState };
+    PadBoardComponent   m_PadComponent        { m_AudioEngine.midiState };
+    ControlsComponent   m_ControlsComponent   { m_AudioEngine.audioEffectsState };
     
-    SequencerComponent  sequencerComponent  { audioEngine.midiSequencer,
-                                              audioEngine.getNumberOfSounds(),
-                                              audioEngine.midiSequencer.getLength() };
+    SequencerComponent  m_SequencerComponent  { m_AudioEngine.midiSequencer,
+                                                m_AudioEngine.getNumberOfSounds(),
+                                                m_AudioEngine.midiSequencer.getLength() };
     
-    TextButton padButton { "" };
-    TextButton sequencerButton { "" };
+    TextButton m_PadButton          { "" };
+    TextButton m_SequencerButton    { "" };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

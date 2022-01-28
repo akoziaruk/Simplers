@@ -25,17 +25,17 @@ public:
         virtual void handleValueChanged(AudioEffectsState* source, Parameters parameters) = 0;
     };
     
-    void setListener(Listener* l)        { listener = l; };
-    void removeListener (Listener* l)    { listener = NULL; };
+    void setListener(Listener* l)        { m_Listener = l; };
+    void removeListener (Listener* l)    { m_Listener = NULL; };
     
-    Parameters getParameters()           { return parameters; };
-    void setParameters(Parameters p)     { parameters = p; listener->handleValueChanged(this, parameters); };
+    Parameters getParameters()           { return m_Parameters; };
+    void setParameters(Parameters p)     { m_Parameters = p; m_Listener->handleValueChanged(this, m_Parameters); };
     
 private:
 
     //==============================================================================
-    Listener* listener;
-    Parameters parameters;
+    Listener* m_Listener;
+    Parameters m_Parameters;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AudioEffectsState)
 };

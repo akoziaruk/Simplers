@@ -58,7 +58,7 @@ private:
     Listener* m_Listener;
 
     Label m_TitleLabel;
-    ToggleButton enableButton;
+    ToggleButton m_EnableButton;
     
     Array<Slider*> m_Sliders;
     Array<Label*> m_Labels;
