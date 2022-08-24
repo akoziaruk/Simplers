@@ -1,6 +1,6 @@
 # Simpler
 
-Sample application implemented on Juce audio engine. Written in C++. Build & tested on iOS.
+Sample application implemented with Juce audio engine. Written in C++. Build & tested on iOS.
 
 Play Drum Pads and update in real time Reverb & Distortion sound effects with low latency. 
 
